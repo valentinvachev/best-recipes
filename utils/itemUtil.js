@@ -357,8 +357,8 @@ export function redirectSortingFunction(context) {
 
 
 export function domainName() {
-    // const name = "best-recipes";
-    const name = "";
+    const name = "best-recipes";
+    // const name = "";
 
     if (name) {
         return `${name}`;
