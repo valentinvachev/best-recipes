@@ -22,7 +22,7 @@ function controller() {
         this.use("Handlebars", "hbs");
 
         this.get("/best-recipes/#/home", getRequestHome);
-        this.get("/", getRequestHome);
+        this.get("/best-recipes/", getRequestHome);
         this.get("/best-recipes/#/", getRequestHome);
         this.get("/best-recipes/#/login", getRequestLogin);
         this.get("/best-recipes/#/reset-password", getRequestReset);
