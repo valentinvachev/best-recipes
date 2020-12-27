@@ -359,7 +359,7 @@ export function redirectSortingFunction(context) {
 export function domainName() {
     const name = "best-recipes";
     // const name = "";
-
+    console.log(name);
     if (name) {
         return "/" + name;
     } else {
