@@ -313,9 +313,9 @@ export function searchFilterHeader() {
             const query = searchingBox.value.toLocaleLowerCase();
 
             if (query.trim() === "") {
-                window.history.pushState({}, '', `${domainName()}/#/recipes/page/1`);
+                window.history.pushState({}, '', `/${domainName()}/#/recipes/page/1`);
             } else {
-                window.history.pushState({}, '', `${domainName()}/#/recipes/search/${query}/page/1`);
+                window.history.pushState({}, '', `/${domainName()}/#/recipes/search/${query}/page/1`);
             }
         })
     }
@@ -351,9 +351,7 @@ export function redirectSortingFunction(context) {
         }
 
 
-        console.log(urlBase);
-
-        context.redirect(`${domainName()}/${urlBase}/sorted/${sorting}/page/1`);
+        context.redirect(`/${domainName()}/${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 
