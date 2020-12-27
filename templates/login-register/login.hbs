@@ -1,6 +1,6 @@
 {{> header}}
 <div class="container auth">
-    <form action="/{{domainName}}/#/login" method="post">
+    <form action="{{domainName}}/#/login" method="post">
         <fieldset>
             <p class="field email">
                 <input type="email" id="email" name="email">
@@ -14,10 +14,10 @@
                 <button class="btn submit" type="submit">Влез</button>
             </p>
              <p class="field">
-                <span>Забравена парола?<a href="/{{domainName}}/#/reset-password">Получи нова</a></span>
+                <span>Забравена парола?<a href="{{domainName}}/#/reset-password">Получи нова</a></span>
             </p>
             <p class="field">
-                <span>Все още нямаш профил?<a href="/{{domainName}}/#/register">Регистрирай тук</a></span>
+                <span>Все още нямаш профил?<a href="{{domainName}}/#/register">Регистрирай тук</a></span>
             </p>
         </fieldset>
     </form>

@@ -361,7 +361,7 @@ export function domainName() {
     // const name = "";
 
     if (name) {
-        return `${name}`;
+        return `/${name}`;
     } else {
         return "";
     }

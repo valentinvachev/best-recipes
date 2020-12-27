@@ -310,7 +310,8 @@ nav.navbar a:hover {
     }
     section.article {
         max-width: 100%;
-        margin: auto;
+        margin: 2rem auto;
+        /* height: auto; */
     }
 }
 
@@ -324,9 +325,9 @@ nav.navbar a:hover {
     /* div.recipe {
         width: 100%;
     } */
-    div.content section.article {
+    /* div.content section.article {
         padding: 0;
         margin: 1rem auto;
         width: 100%;
-    }
+    } */
 }

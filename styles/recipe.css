@@ -123,6 +123,10 @@ div.star {
     div.recipe {
         width: 650px;
         margin: auto;
+        height: auto;
+    }
+    div.content section.article {
+        margin-top: 3rem;
     }
 }
 
@@ -215,27 +219,31 @@ div.star {
 @media only screen and (max-width: 480px) {
     a.recipe-home {
         width: 30%;
-        height: 25%;
+        height: 210px;
+        /* min-height: 210px; */
     }
     .recipe-home>img {
         margin-top: 0.3rem;
         width: 100%;
-        height: 35%;
+        height: 70px;
+        /* max-height: 80px; */
     }
     a.recipe-home h3 {
         height: 25%;
+        min-height: 50px;
         padding: 0.2rem;
-        font-size: 80%;
+        font-size: 90%;
     }
     div.recipe {
         width: 100%;
         margin: auto;
     }
     div#rating-overall {
-        height: 8%;
+        height: 5%;
         padding: 0;
         margin: 0;
-        font-size: 80%;
+        font-size: 2vw;
+        width: 100%;
     }
     div#cookIt {
         height: 8%;
@@ -245,35 +253,35 @@ div.star {
 
 @media only screen and (max-width: 420px) {
     a.recipe-home {
-        width: 42%;
-        height: 20%;
-        max-height: 230px;
-        margin: 2rem 4%;
+        width: 40%;
+        height: 210px;
+        /* min-height: 210px; */
     }
     .recipe-home>img {
         margin-top: 0.3rem;
         width: 100%;
-        height: 35%;
+        height: 80px;
+        /* max-height: 80px; */
     }
     a.recipe-home h3 {
         height: 25%;
+        min-height: 50px;
         padding: 0.2rem;
-        font-size: 100%;
+        font-size: 90%;
     }
     div.recipe {
-        /* width: 100%; */
         width: 100%;
         margin: auto;
-        max-width: 100%;
     }
     div#rating-overall {
-        height: 8%;
+        height: 5%;
         padding: 0;
         margin: 0;
-        font-size: 100%;
+        font-size: 2.5vw;
+        width: 100%;
     }
     div#cookIt {
         height: 8%;
-        font-size: 100%;
+        font-size: 80%;
     }
 }

@@ -4,19 +4,19 @@
     <div id="menu-mobile">|||</div>
     <nav class="nav-buttons">
         <ul>
-            <li class="left"><a href="/{{domainName}}/#/home">Главна страница</a></li>
+            <li class="left"><a href="{{domainName}}/#/home">Главна страница</a></li>
             {{#if loggedIn}}
-            <li class="left"><a href="/{{domainName}}/#/recipes/page/1">Всички рецепти</a></li>
-            <li class="left"><a href="/{{domainName}}/#/my-recipes/page/1">Моите рецепти</a></li>
-            <li class="right dropdown" id="picture-profile"><a href="/{{domainName}}/#/my-profile"><img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fuser.png?alt=media&token=8fbaa587-61c4-4acb-8283-cd3fb5b44814"
+            <li class="left"><a href="{{domainName}}/#/recipes/page/1">Всички рецепти</a></li>
+            <li class="left"><a href="{{domainName}}/#/my-recipes/page/1">Моите рецепти</a></li>
+            <li class="right dropdown" id="picture-profile"><a href="{{domainName}}/#/my-profile"><img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fuser.png?alt=media&token=8fbaa587-61c4-4acb-8283-cd3fb5b44814"
                         alt=""></a>
                 <div class="dropdown-content">
-                    <a href="/{{domainName}}/#/my-profile">Профилът на {{username}}</a>
-                    <a href="/{{domainName}}/#/logout">Излез</a>
+                    <a href="{{domainName}}/#/my-profile">Профилът на {{username}}</a>
+                    <a href="{{domainName}}/#/logout">Излез</a>
                 </div>
             </li>
-            <li id="picture-profile-mobile"><a href="/{{domainName}}/#/my-profile">Профил</a>
-            <li id="logout-mobile"> <a href="/{{domainName}}/#/logout">Излез</a>
+            <li id="picture-profile-mobile"><a href="{{domainName}}/#/my-profile">Профил</a>
+            <li id="logout-mobile"> <a href="{{domainName}}/#/logout">Излез</a>
             <li id="search-form" class="right">
                 <form>
                     {{!-- <label>Намерете рецепта по име:</label> --}}
@@ -26,8 +26,8 @@
             </li>
             
             {{else}}
-            <li class="right"><a href="/{{domainName}}/#/register">Регистрация</a></li>
-            <li class="right"><a href="/{{domainName}}/#/login">Вход</a></li>
+            <li class="right"><a href="{{domainName}}/#/register">Регистрация</a></li>
+            <li class="right"><a href="{{domainName}}/#/login">Вход</a></li>
             {{/if}}
         </ul>
     </nav>
