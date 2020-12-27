@@ -293,6 +293,9 @@ nav.navbar a:hover {
         text-align: center;
         max-width: 90%;
     }
+    div.content {
+        padding: 0.5rem;
+    }
     div.content>section {
         margin: 5rem 1rem 1rem 1rem;
         padding: 1rem;
@@ -318,9 +321,9 @@ nav.navbar a:hover {
         right: 1rem;
         width: 35%;
     }
-    div.recipe {
+    /* div.recipe {
         width: 100%;
-    }
+    } */
     div.content section.article {
         padding: 0;
         margin: 1rem auto;

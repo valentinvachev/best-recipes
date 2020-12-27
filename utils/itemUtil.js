@@ -313,9 +313,9 @@ export function searchFilterHeader() {
             const query = searchingBox.value.toLocaleLowerCase();
 
             if (query.trim() === "") {
-                window.history.pushState({}, '', `/best-recipes/#/recipes/page/1`);
+                window.history.pushState({}, '', `${domainName()}/#/recipes/page/1`);
             } else {
-                window.history.pushState({}, '', `/best-recipes/#/recipes/search/${query}/page/1`);
+                window.history.pushState({}, '', `${domainName()}/#/recipes/search/${query}/page/1`);
             }
         })
     }
@@ -353,6 +353,18 @@ export function redirectSortingFunction(context) {
 
         console.log(urlBase);
 
-        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
+        context.redirect(`${domainName()}/${urlBase}/sorted/${sorting}/page/1`);
     })
+}
+
+
+export function domainName() {
+    // const name = "best-recipes";
+    const name = "";
+
+    if (name) {
+        return `${name}`;
+    } else {
+        return "";
+    }
 }

@@ -110,74 +110,170 @@ div.star {
 @media only screen and (max-width: 1400px) {
     a.recipe-home {
         width: 200px;
+        height: 350px;
+    }
+    .recipe-home>img {
+        width: 200px;
+        height: 150px;
+    }
+    a.recipe-home h3 {
+        height: 25%;
+        /* padding: 0 1rem; */
+    }
+    div.recipe {
+        width: 650px;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 900px) {
     a.recipe-home {
         width: 200px;
-        height: 420px;
-        margin: 1% 1%;
+        height: 350px;
+    }
+    .recipe-home>img {
+        width: 200px;
+        height: 150px;
     }
     a.recipe-home h3 {
-        height: 20%;
-        padding: 0 1rem;
+        height: 25%;
+        /* padding: 0 1rem; */
+    }
+    div.recipe {
+        width: 650px;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 820px) {
     a.recipe-home {
-        width: 170px;
-        height: 320px;
-        margin: 1% 1.5%;
-        font-size: max(2vw, 14px);
+        width: 180px;
+        height: 330px;
     }
     .recipe-home>img {
-        width: 35vw;
-        height: 15.5vh;
+        width: 200px;
+        height: 150px;
     }
     a.recipe-home h3 {
         height: 25%;
-        padding: 0 0.5rem;
+        /* padding: 0 1rem; */
+    }
+    div.recipe {
+        width: 580px;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 720px) {
     a.recipe-home {
         width: 150px;
-        height: 270px;
-        margin: 1% 1.5%;
-        font-size: max(2vw, 14px);
+        height: 300px;
     }
     .recipe-home>img {
-        width: 28vw;
-        height: 13.5vh;
+        width: 150px;
+        height: 130px;
     }
     a.recipe-home h3 {
-        height: 20%;
-        padding: 0 0.5rem;
+        height: 25%;
+        /* padding: 0 1rem; */
     }
-    div.recipe div#cookIt {
+    div.recipe {
+        width: 500px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    a.recipe-home {
+        width: 120px;
+        height: 230px;
+    }
+    .recipe-home>img {
+        margin-top: 0.2rem;
+        width: 120px;
+        height: 80px;
+    }
+    a.recipe-home h3 {
+        height: 25%;
+        padding: 0.2rem;
+    }
+    div.recipe {
+        width: 400px;
+        margin: auto;
+    }
+    div#rating-overall {
+        height: 8%;
+        padding: 0;
+        margin: 0;
+        font-size: 90%;
+    }
+    div#cookIt {
         height: 8%;
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 480px) {
     a.recipe-home {
-        width: 35vw;
-        height: 33vh;
-        margin: 0.5rem 3%;
-        font-size: 3vw;
-    }
-    a.recipe-home h3 {
-        height: 20%;
-        padding: 0 0.5rem;
+        width: 30%;
+        height: 25%;
     }
     .recipe-home>img {
-        width: 35vw;
-        height: 15.5vh;
+        margin-top: 0.3rem;
+        width: 100%;
+        height: 35%;
     }
-    div.recipe div#cookIt {
-        height: 7%;
+    a.recipe-home h3 {
+        height: 25%;
+        padding: 0.2rem;
+        font-size: 80%;
+    }
+    div.recipe {
+        width: 100%;
+        margin: auto;
+    }
+    div#rating-overall {
+        height: 8%;
+        padding: 0;
+        margin: 0;
+        font-size: 80%;
+    }
+    div#cookIt {
+        height: 8%;
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    a.recipe-home {
+        width: 42%;
+        height: 20%;
+        max-height: 230px;
+        margin: 2rem 4%;
+    }
+    .recipe-home>img {
+        margin-top: 0.3rem;
+        width: 100%;
+        height: 35%;
+    }
+    a.recipe-home h3 {
+        height: 25%;
+        padding: 0.2rem;
+        font-size: 100%;
+    }
+    div.recipe {
+        /* width: 100%; */
+        width: 100%;
+        margin: auto;
+        max-width: 100%;
+    }
+    div#rating-overall {
+        height: 8%;
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+    }
+    div#cookIt {
+        height: 8%;
+        font-size: 100%;
     }
 }

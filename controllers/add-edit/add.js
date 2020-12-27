@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 import { addRecipe } from "../../utils/data.js"
 
 export async function getRequestAdd() {
@@ -17,7 +17,7 @@ export async function getRequestAdd() {
         this.partial("./templates/add-edit/add.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
 
@@ -68,7 +68,7 @@ export async function postRequestAdd(context) {
 
 
             await addRecipe(name, time, portions, products, preparation, category, creator, urlImage, rating, peopleRated, comments, dateAdded, timesRated, username, idUser);
-            this.redirect("/best-recipes/#/home");
+            this.redirect("${domainName}/#/home");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

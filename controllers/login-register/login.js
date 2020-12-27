@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 import { loginUser } from "../../utils/data.js";
 
 export async function getRequestLogin() {
@@ -36,7 +36,7 @@ export async function postRequestLogin(context) {
             let auth = { idToken: data.idToken, refreshToken: data.refreshToken };
             localStorage.setItem("auth", JSON.stringify(auth));
 
-            this.redirect("/best-recipes/#/home");
+            this.redirect("${domainName}/#/home");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

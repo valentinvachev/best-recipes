@@ -20,47 +20,46 @@ function controller() {
     const app = Sammy("#root", function(context) {
 
         this.use("Handlebars", "hbs");
+        this.get("/#/home", getRequestHome);
+        this.get("/", getRequestHome);
+        this.get("/#/", getRequestHome);
+        this.get("/#/login", getRequestLogin);
+        this.get("/#/reset-password", getRequestReset);
+        this.get("/#/register", getRequestRegister);
+        this.get("/#/logout", getRequestLogout);
+        this.get("/#/add", getRequestAdd);
 
-        this.get("/best-recipes/#/home", getRequestHome);
-        this.get("/best-recipes/", getRequestHome);
-        this.get("/best-recipes/#/", getRequestHome);
-        this.get("/best-recipes/#/login", getRequestLogin);
-        this.get("/best-recipes/#/reset-password", getRequestReset);
-        this.get("/best-recipes/#/register", getRequestRegister);
-        this.get("/best-recipes/#/logout", getRequestLogout);
-        this.get("/best-recipes/#/add", getRequestAdd);
+        this.get("/#/recipes/search/:query/page/:page", getRequestSearchedNameRecipes);
+        this.get("/#/recipes/search/:query/sorted/:sorting/page/:page", getRequestSearchedNameRecipes);
 
-        this.get("/best-recipes/#/recipes/search/:query/page/:page", getRequestSearchedNameRecipes);
-        this.get("/best-recipes/#/recipes/search/:query/sorted/:sorting/page/:page", getRequestSearchedNameRecipes);
+        this.get("/#/recipes/page/:page", getRequestAllRecipes);
+        this.get("/#/recipes/sorted/:sorting/page/:page", getRequestAllRecipes);
 
-        this.get("/best-recipes/#/recipes/page/:page", getRequestAllRecipes);
-        this.get("/best-recipes/#/recipes/sorted/:sorting/page/:page", getRequestAllRecipes);
+        this.get("/#/recipes/:category/page/:page", getRequestCategory);
+        this.get("/#/recipes/:category/sorted/:sorting/page/:page", getRequestCategory);
 
-        this.get("/best-recipes/#/recipes/:category/page/:page", getRequestCategory);
-        this.get("/best-recipes/#/recipes/:category/sorted/:sorting/page/:page", getRequestCategory);
+        this.get("/#/my-recipes/page/:page", getRequestMyRecipes);
+        this.get("/#/my-recipes/sorted/:sorting/page/:page", getRequestMyRecipes);
 
-        this.get("/best-recipes/#/my-recipes/page/:page", getRequestMyRecipes);
-        this.get("/best-recipes/#/my-recipes/sorted/:sorting/page/:page", getRequestMyRecipes);
+        this.get("/#/my-recipes/:category/page/:page", getRequestMyCategory);
+        this.get("/#/my-recipes/:category/sorted/:sorting/page/:page", getRequestMyCategory);
 
-        this.get("/best-recipes/#/my-recipes/:category/page/:page", getRequestMyCategory);
-        this.get("/best-recipes/#/my-recipes/:category/sorted/:sorting/page/:page", getRequestMyCategory);
+        this.get("/#/recipe/:id/comments/page/:number", getRequestDetails);
+        this.get("/#/recipe/:id/comments/page/:number/published", getRequestDetails);
 
-        this.get("/best-recipes/#/recipe/:id/comments/page/:number", getRequestDetails);
-        this.get("/best-recipes/#/recipe/:id/comments/page/:number/published", getRequestDetails);
-
-        this.get("/best-recipes/#/recipes/chef/:username/:idUser/page/:page", getRequestChef);
-        this.get("/best-recipes/#/recipes/chef/:username/:idUser/sorted/:sorting/page/:page", getRequestChef);
+        this.get("/#/recipes/chef/:username/:idUser/page/:page", getRequestChef);
+        this.get("/#/recipes/chef/:username/:idUser/sorted/:sorting/page/:page", getRequestChef);
 
 
-        this.get("/best-recipes/#/delete/:id", postRequestDelete);
-        this.get("/best-recipes/#/edit/:id", getRequestEdit);
-        this.get("/best-recipes/#/my-profile", getRequestProfile);
+        this.get("/#/delete/:id", postRequestDelete);
+        this.get("/#/edit/:id", getRequestEdit);
+        this.get("/#/my-profile", getRequestProfile);
 
-        this.post("/best-recipes/#/register", (context) => { postRequestRegister.call(context); });
-        this.post("/best-recipes/#/login", (context) => { postRequestLogin.call(context); });
-        this.post("/best-recipes/#/reset-password", (context) => { postRequestReset.call(context); });
-        this.post("/best-recipes/#/add", (context) => { postRequestAdd.call(context); });
-        this.post("/best-recipes/#/edit", (context) => { postRequestEdit.call(context); });
+        this.post("/#/register", (context) => { postRequestRegister.call(context); });
+        this.post("/#/login", (context) => { postRequestLogin.call(context); });
+        this.post("/#/reset-password", (context) => { postRequestReset.call(context); });
+        this.post("/#/add", (context) => { postRequestAdd.call(context); });
+        this.post("/#/edit", (context) => { postRequestEdit.call(context); });
     });
 
     app.run();

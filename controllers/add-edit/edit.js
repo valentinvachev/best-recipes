@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { editRecipe, getSpecificRecipe } from "../../utils/data.js"
-import { transformProductsAndPreparation, waitingButton, searchFilterHeader } from "../../utils/itemUtil.js"
+import { transformProductsAndPreparation, waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 
 export async function getRequestEdit(context) {
 
@@ -24,7 +24,7 @@ export async function getRequestEdit(context) {
         this.partial("./templates/add-edit/edit.hbs", templateObject, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/best-recipes/#/login");
+        this.redirect("${domainName}${domainName}/#/login");
     }
 
     function manageEvents() {

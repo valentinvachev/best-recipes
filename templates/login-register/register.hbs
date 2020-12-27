@@ -1,6 +1,6 @@
 {{> header}}
 <div class="container auth">
-    <form action="/best-recipes/#/register" method="post">
+    <form action="{{domainName}}/#/register" method="post">
         <fieldset>
             <p class="field email">
                 <input type="email" id="email" name="email">
@@ -22,7 +22,7 @@
                 <button class="btn submit" type="submit">Регистрирай</button>
             </p>
             <p class="field">
-                <span>Ако вече имаш създаден профил:<a href="/best-recipes/#/login">Влез тук</a></span>
+                <span>Ако вече имаш създаден профил:<a href="{{domainName}}/#/login">Влез тук</a></span>
             </p>
         </fieldset>
     </form>

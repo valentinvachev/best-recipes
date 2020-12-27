@@ -1,7 +1,7 @@
 import { getUser } from "../utils/user.js"
 import { getSpecificRecipe, updateRecipe, updateRecipeRating } from "../utils/data.js"
 import { manageComments, checkIfUserOwnRecipe as checkIUserRecipeRelationship, waitingButton, searchFilterHeader } from "../utils/itemUtil.js"
-import { determinePagesComments } from "../utils/itemUtil.js"
+import { determinePagesComments, domainName } from "../utils/itemUtil.js"
 
 export async function getRequestDetails(context) {
 
@@ -35,7 +35,7 @@ export async function getRequestDetails(context) {
         this.partial("./templates/details-product/details.hbs", templateObject, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
 
@@ -116,7 +116,7 @@ export async function getRequestDetails(context) {
                         await updateRecipe(id, comments);
 
                         waitingButton(e.target, "Моля изчакайте...", "Публикувай");
-                        setTimeout(() => redirect(`/best-recipes/#/recipe/${id}/comments/page/${number}`), 0);
+                        setTimeout(() => redirect(`${domainName}/#/recipe/${id}/comments/page/${number}`), 0);
 
                     }
 
@@ -138,8 +138,8 @@ export async function getRequestDetails(context) {
                     waitingButton(e.target, "", "");
                     await updateRecipe(id, comments);
 
-                    setTimeout(() => redirect(`/best-recipes/#/recipe/${id}/comments/page/1/published`), 1000);
-                    setTimeout(() => redirect(`/best-recipes/#/recipe/${id}/comments/page/1`), 1000);
+                    setTimeout(() => redirect(`${domainName}/#/recipe/${id}/comments/page/1/published`), 1000);
+                    setTimeout(() => redirect(`${domainName}/#/recipe/${id}/comments/page/1`), 1000);
                     waitingButton(e.target, "", "");
                 }
 
@@ -163,8 +163,8 @@ export async function getRequestDetails(context) {
 
                 await updateRecipe(id, comments);
 
-                setTimeout(() => redirect(`/best-recipes/#/recipe/${id}/comments/page/1/published`), 1000);
-                setTimeout(() => redirect(`/best-recipes/#/recipe/${id}/comments/page/1`), 1000);
+                setTimeout(() => redirect(`${domainName}/#/recipe/${id}/comments/page/1/published`), 1000);
+                setTimeout(() => redirect(`${domainName}/#/recipe/${id}/comments/page/1`), 1000);
                 setTimeout(() => waitingButton(buttonPublish, "Моля изчакайте...", "Публикувай"), 1000);
             }
         })

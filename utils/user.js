@@ -1,5 +1,6 @@
 import * as databaseManager from "../utils/firebase.js"
-import {getUserDataFunction} from "./data.js"
+import { getUserDataFunction } from "./data.js"
+import { domainName } from "./itemUtil.js"
 
 export async function getUser() {
 
@@ -9,11 +10,12 @@ export async function getUser() {
         user = await getUserDataFunction();
         user.loggedIn = true;
 
-        user.username =  getUsername(user);
+        user.username = getUsername(user);
     } else {
         user = { loggedIn: false }
     }
 
+    user.domainName = domainName();
     return user;
 }
 
@@ -23,5 +25,5 @@ export async function getIdToken() {
 }
 
 function getUsername(user) {
-     return user.displayName;   
+    return user.displayName;
 }

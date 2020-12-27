@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import { getAllRecipes } from "../../utils/data.js"
-import { gatherInfoRecipe, determinePages, searchFilterHeader, sortRecipesByCriteria, redirectSortingFunction } from "../../utils/itemUtil.js"
+import { gatherInfoRecipe, determinePages, searchFilterHeader, sortRecipesByCriteria, redirectSortingFunction, domainName } from "../../utils/itemUtil.js"
 
 export async function getRequestAllRecipes(context) {
 
@@ -30,7 +30,7 @@ export async function getRequestAllRecipes(context) {
         this.partial("./templates/all-recipes/all-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
 

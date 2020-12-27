@@ -1,6 +1,6 @@
 // import { getUser } from "../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 import { resetPassword } from "../../utils/data.js";
 
 
@@ -31,7 +31,7 @@ export async function postRequestReset(context) {
 
             waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Заяви нова парола");
             let data = await resetPassword(email);
-            this.redirect("/best-recipes/#/login");
+            this.redirect("${domainName}/#/login");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

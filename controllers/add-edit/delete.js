@@ -1,6 +1,6 @@
 import { deleteRecipe } from "../../utils/data.js"
 import { getUser } from "../../utils/user.js"
-import { waitingButton } from "../../utils/itemUtil.js"
+import { waitingButton, domainName } from "../../utils/itemUtil.js"
 
 export async function postRequestDelete(context) {
 
@@ -11,9 +11,9 @@ export async function postRequestDelete(context) {
         let id = context.params.id;
         waitingButton(document.getElementById("delete-recipe", "Моля изчакайте...", ""))
         await deleteRecipe(id);
-        context.redirect("/best-recipes/#/home");
+        context.redirect("${domainName}/#/home");
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 }

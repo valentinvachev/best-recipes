@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import { getAllRecipes } from "../../utils/data.js"
-import { determinePages, gatherInfoRecipe, findTotalPeopleVoted, searchFilterHeader, redirectSortingFunction, sortRecipesByCriteria, filterRecipesByOwnerIdUser } from "../../utils/itemUtil.js"
+import { determinePages, gatherInfoRecipe, findTotalPeopleVoted, searchFilterHeader, redirectSortingFunction, sortRecipesByCriteria, filterRecipesByOwnerIdUser, domainName } from "../../utils/itemUtil.js"
 
 export async function getRequestChef(context) {
 
@@ -12,8 +12,10 @@ export async function getRequestChef(context) {
         let recipesDB = [];
         let recipes = [];
 
+        console.log(context.params);
+
         gatherInfoRecipe(allRecipesDB, recipesDB);
-        recipesDB = filterRecipesByOwnerIdUser(recipesDB, user.localId);
+        recipesDB = filterRecipesByOwnerIdUser(recipesDB, context.params.idUser);
         findTotalPeopleVoted(recipesDB, user);
         sortRecipesByCriteria(context.params, recipesDB, user);
         determinePages(context.params.page, 10, recipesDB, recipes, user);
@@ -35,7 +37,7 @@ export async function getRequestChef(context) {
         this.partial("./templates/chef-recipes/chef-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
     function manageEvents() {

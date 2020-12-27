@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { updateProfilePicture, deleteUserFunction, changePasswordFunction } from "../../utils/data.js"
-import { searchFilterHeader } from "../../utils/itemUtil.js"
+import { searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 
 export async function getRequestProfile(context) {
 
@@ -17,7 +17,7 @@ export async function getRequestProfile(context) {
         this.partial("./templates/profile/profile.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
     function manageEvents() {

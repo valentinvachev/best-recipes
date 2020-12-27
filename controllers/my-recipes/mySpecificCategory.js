@@ -8,7 +8,8 @@ import {
     findTotalPeopleVoted,
     searchFilterHeader,
     sortRecipesByCriteria,
-    redirectSortingFunction
+    redirectSortingFunction,
+    domainName
 } from "../../utils/itemUtil.js"
 
 export async function getRequestMyCategory(context) {
@@ -44,7 +45,7 @@ export async function getRequestMyCategory(context) {
         this.partial("./templates/my-recipes/my-specific-category.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/best-recipes/#/login");
+        this.redirect("${domainName}/#/login");
     }
 
 
