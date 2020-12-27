@@ -40,7 +40,7 @@ export async function postRequestRegister(context) {
             let data = await registerUser(email, password, username);
             let auth = { idToken: data.idToken, refreshToken: data.refreshToken };
             localStorage.setItem("auth", JSON.stringify(auth));
-            this.redirect("${domainName}/#/home");
+            this.redirect("/#/home");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

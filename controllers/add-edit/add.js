@@ -17,7 +17,7 @@ export async function getRequestAdd() {
         this.partial("./templates/add-edit/add.hbs", user, manageEvents);
 
     } else {
-        this.redirect("${domainName}/#/login");
+        this.redirect("/#/login");
     }
 
 
@@ -68,7 +68,7 @@ export async function postRequestAdd(context) {
 
 
             await addRecipe(name, time, portions, products, preparation, category, creator, urlImage, rating, peopleRated, comments, dateAdded, timesRated, username, idUser);
-            this.redirect("${domainName}/#/home");
+            this.redirect("/#/home");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

@@ -31,7 +31,7 @@ export async function postRequestReset(context) {
 
             waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Заяви нова парола");
             let data = await resetPassword(email);
-            this.redirect("${domainName}/#/login");
+            this.redirect("/#/login");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

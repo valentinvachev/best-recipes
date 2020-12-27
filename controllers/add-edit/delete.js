@@ -11,9 +11,9 @@ export async function postRequestDelete(context) {
         let id = context.params.id;
         waitingButton(document.getElementById("delete-recipe", "Моля изчакайте...", ""))
         await deleteRecipe(id);
-        context.redirect("${domainName}/#/home");
+        context.redirect("/#/home");
 
     } else {
-        this.redirect("${domainName}/#/login");
+        this.redirect("/#/login");
     }
 }

@@ -33,7 +33,7 @@ export async function getRequestSearchedNameRecipes(context) {
         this.partial("./templates/all-recipes/search-page.hbs", user, manageEvents);
 
     } else {
-        this.redirect("${domainName}/#/login");
+        this.redirect("/#/login");
     }
 
 
