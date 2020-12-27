@@ -314,7 +314,7 @@
     
     #root>div>section.comments {
         padding-top: 1em;
-        width: 100%;
+        width: 60%;
         max-width: 100%;
         /* margin: 1rem; */
     }
@@ -499,11 +499,10 @@
         padding: 0.7em;
         width: 12rem;
     }
-    
-    #publish-comment {
+    /* #publish-comment:hover {
         color: white;
         font-weight: bolder;
-    }
+    } */
     
     .action-owner {
         float: right;
