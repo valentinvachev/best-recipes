@@ -1,0 +1,25 @@
+{{> header}}
+<div class="container auth">
+    <form action="/best-recipes/#/login" method="post">
+        <fieldset>
+            <p class="field email">
+                <input type="email" id="email" name="email">
+                <label for="email">Емейл:</label>
+            </p>
+            <p class="field password">
+                <input type="password" id="password" name="password">
+                <label for="password">Парола:</label>
+            </p>
+            <p class="field submit">
+                <button class="btn submit" type="submit">Влез</button>
+            </p>
+             <p class="field">
+                <span>Забравена парола?<a href="/best-recipes/#/reset-password">Получи нова</a></span>
+            </p>
+            <p class="field">
+                <span>Все още нямаш профил?<a href="/best-recipes/#/register">Регистрирай тук</a></span>
+            </p>
+        </fieldset>
+    </form>
+</div>
+{{> footer}}

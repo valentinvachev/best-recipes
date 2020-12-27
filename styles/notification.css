@@ -1,0 +1,22 @@
+.notification {
+    font-size: 1.5em;
+    float: right;
+    color: #ffffff;
+    padding: 0.5em 2em 0.5em 2em;
+    margin: 1em;
+    display: none;
+    position: fixed;
+    bottom: 3em;
+    right: 0;
+    text-align: center;
+    border-radius: 0.5em;
+    z-index: 3;
+}
+
+#infoBox {
+    background: #393;
+}
+
+#errorBox {
+    background: rgb(245, 32, 32);
+}

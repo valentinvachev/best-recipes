@@ -1,0 +1,50 @@
+{{> header}}
+<div class="container add" data-id="{{id}}">
+    <form action="/best-recipes/#/edit" method="post">
+        <fieldset>
+            <p id="disclaimer">Полетата отбелязи с * са задължителни</p>
+            <p class="field name">
+                <input type="text" id="name" name="name" value="{{name}}">
+                <label for="name">Име: *</label>
+            </p>
+            <p class="field tim e">
+                <input type="number" id="time" name="time" value="{{time}}">
+                <label for="time">Минути за приготвяне:</label>
+            </p>
+            <p class="field portions">
+                <input type="number" id="portions" name="portions" value="{{portions}}">
+                <label for="portions">Порции:</label>
+            </p>
+            <p class="field products">
+                <textarea name="products" id="products"
+                    placeholder="Пример: кисяло мляко - 400 грама">{{products}}</textarea>
+                <label for="products">Добави продукт: * <span>(по един продукт на ред)</span></label>
+            </p>
+            <p class="field preparation">
+                <textarea name="preparation" id="preparation">{{preparation}}</textarea>
+                <label for="preparation">Начин на приготвяне: *</label>
+            </p>
+            <p class="field category">
+                <select name="category" id="category">
+                    <option selected hidden value="{{category}}">{{category}}</option>
+                    <option value="Закускa">Закускa</option>
+                    <option value="Основно">Основно</option>
+                    <option value="Салати">Салати</option>
+                    <option value="Сосове">Сосове</option>
+                    <option value="Предястие">Предястие</option>
+                    <option value="Десерт">Десерт</option>
+                    <option value="Супи">Супи</option>
+                </select>
+                <label for="category">Категория: *</label>
+            </p>
+            <p class="field image">
+                <input type="file" id="image" name="image">
+                <label for="image">Нова снимка: (оставете празно ако искате да запазите старата)</label>
+            </p>
+            <p class="field submit">
+                <button class="btn submit" type="submit">Публикувай</button>
+            </p>
+        </fieldset>
+    </form>
+</div>
+{{> footer}}

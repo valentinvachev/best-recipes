@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="icon" href="pictures/pngwing.com.png">
+    <title>Recipes</title>
+</head>
+
+<body>
+    <div id="infoBox" class="notification" disabled></div>
+    <div id="errorBox" class="notification" disabled></div>
+    <main id="root">
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sammy@0.7.6/lib/plugins/sammy.handlebars.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD9nt5UG8oqjMAH3zAqIDl7hJCCgxc1fRw",
+            authDomain: "recipeproject-f0551.firebaseapp.com",
+            databaseURL: "https://recipeproject-f0551-default-rtdb.firebaseio.com",
+            projectId: "recipeproject-f0551",
+            storageBucket: "recipeproject-f0551.appspot.com",
+            messagingSenderId: "637948457132",
+            appId: "1:637948457132:web:002541dcdc6581ff9cef09"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var storage = firebase.storage();
+    </script>
+
+    <script src="./app.js" type="module"></script>
+</body>
+
+</html>

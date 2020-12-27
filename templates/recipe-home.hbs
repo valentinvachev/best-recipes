@@ -1,0 +1,21 @@
+<a href="/best-recipes/#/recipe/{{id}}/comments/page/1" class="recipe-home">
+    <div id="category-recipe">{{category}}</div>
+    <img src="{{urlImage}}" alt="" class="picture-added-destination" width="250" height="200" class="main-image">
+    <h3>{{name}}</h3>
+    <div id="rating-overall">Оценка {{rating}}/10.0</div>
+    {{#if timesRated}}
+    {{#if oneTimeRated}}
+    <div id="cookIt">1 вече сготви</div>
+    {{else}}
+    <div id="cookIt">{{timesRated}} вече сготвиха</div>
+    {{/if}}
+    {{else}}
+    <div id="cookIt">Сготви първи</div>
+    {{/if}}
+    {{#if star}}
+    <div class="star"><img src="../pictures/PikPng.com_rating-star-images-png_5633650.png" alt="" width="250"
+            height="200">
+    </div>
+    {{/if}}
+</a>
+

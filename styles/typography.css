@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,700&display=swap');
+html {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: min(1.8vh, 20px);
+    box-sizing: border-box;
+    letter-spacing: 0.02rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+}

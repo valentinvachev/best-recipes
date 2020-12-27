@@ -1,0 +1,16 @@
+<div class="comment" data-id="{{index}}">
+    {{#if photoUrl}}
+    <img src="{{photoUrl}}" alt="" class="">
+    {{else}}
+    <img src="../pictures/pngfind.com-cooking-png-637582.png" alt="" class="">
+    {{/if}}
+    <h4>{{author}}</h4>
+    <p id="comment-date">Публикувано на {{datePublished}}</p>
+    {{#if isCreatorComment}}
+    <button id="edit-comment"><img src="../pictures/edit.png" alt="" id="edit-comment-pic"></button>
+    <button id="publish-comment">Публикувай</button>
+    <button id="delete-comment"><img src="../pictures/edit2.png" alt="" id="delete-comment-pic"></button>
+    {{/if}}
+    <p id="comment-area">{{comment}}</p>
+    <textarea name="" id="comment-area-edit" cols="30" rows="10">{{comment}}</textarea>
+</div>

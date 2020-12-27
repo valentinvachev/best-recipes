@@ -1,0 +1,31 @@
+{{> header}}
+{{> addRecipe}}
+<div class="content">
+    <section class="article">
+        <h2>Рецепти с най-висок рейтинг</h2>
+        <hr>
+        <div class="recipe">
+            {{#if highRatingRecipes}}
+            {{#each highRatingRecipes}}
+            {{> recipe}}
+            {{/each}}
+            {{else}}
+            <div>Все още няма добавени рецепти</div>
+            {{/if}}
+        </div>
+    </section>
+    <section class="article">
+        <h2>Последно добавени</h2>
+        <hr>
+        <div class="recipe">
+            {{#if latestRecipes}}
+            {{#each latestRecipes}}
+            {{> recipe}}
+            {{/each}}
+            {{else}}
+            <div>Все още няма добавени рецепти</div>
+            {{/if}}
+        </div>
+    </section>
+</div>
+{{> footer}}

@@ -1,0 +1,38 @@
+{{> header}}
+<div class="content profile">
+    <section id="username-profile">
+        <h1>{{displayName}}</h1>
+        <p>Емейл: {{email}}</p>
+    </section>
+    <section class="info-details-profile left">
+        {{#if photoUrl}}
+        <img src="{{photoUrl}}" alt="">
+        {{else}}
+        <img src="../../pictures/63-637582_cooking-icon-png-chef-logo-silhouette-png-transparent.png" alt="">
+        {{/if}}
+        <p class="field image-profile">
+            <input type="file" id="image-profile" name="image">
+            {{!-- <label for="image">Снимка:</label> --}}
+            {{!-- <a href="">Смени</a> --}}
+            <button id="change-picture">Смени</button>
+        </p>
+    </section>
+    <section class="info-details-profile right">
+        {{!-- <a href="" class="action-profile">Промени името</a>
+        <a href="" class="action-profile">Смени паролата</a>
+        <a href="" class="action-profile" id="delete-profile">Изтрии профила</a> --}}
+        {{!-- <button class="action-profile">Промени името</button> --}}
+        <button class="action-profile">Смени паролата</button>
+        <button class="action-profile" id="delete-profile">Изтрий профила</button>
+        <p class="field password-profile">
+            <label for="password">Нова парола:</label>
+            <input type="password" id="password" name="password">
+        </p>
+        <p class="field password-profile">
+            <label for="repeatPassword">Повтори парола:</label>
+            <input type="password" id="repeatPassword" name="repeatPassword">
+        </p>
+        <button class="action-profile password-profile">Запази промените</button>
+    </section>
+</div>
+{{> footer}}

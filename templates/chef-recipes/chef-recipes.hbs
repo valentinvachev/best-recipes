@@ -1,0 +1,29 @@
+{{> header}}
+{{> addRecipe}}
+<div class="content">
+    {{> sorting}}
+    <section class="article">
+        <h2>Рецептите на {{chef}}</h2>
+        {{#if totalPeopleCooked}}
+        <span>Общо {{totalPeopleCooked}} сготвиха рецептите на {{chef}}</span>
+        {{else}}
+        {{#if onePersonCooked}}
+        <span>Само 1 човек е сготвил рецептите на {{chef}}</span>
+        {{else}}
+        <span>Все още никой не е сготвил рецептите на {{chef}}</span>
+        {{/if}}
+        {{/if}}
+        <hr>
+        {{!-- {{> dashboard}} --}}
+        <div class="recipe">{{#if recipes}}
+            {{#each recipes}}
+            {{> recipe}}
+            {{/each}}
+            {{else}}
+            <div>Все още няма добавени рецепти</div>
+            {{/if}}
+        </div>
+    </section>
+    {{> pagination}}
+</div>
+{{> footer}}
