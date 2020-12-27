@@ -15,7 +15,7 @@ export async function getUser() {
         user = { loggedIn: false }
     }
 
-    user.domainName = domainName();
+    domainName(user);
     return user;
 }
 
