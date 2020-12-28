@@ -346,7 +346,7 @@ export function redirectSortingFunction(context) {
     option.addEventListener("change", () => {
         let sorting = option.value;
 
-        let url = window.location.hash;
+        let url = window.location.href;
         let urlBase = "";
 
 
