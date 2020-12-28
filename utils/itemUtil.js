@@ -349,7 +349,7 @@ export function redirectSortingFunction(context) {
         let url = window.location.href;
         let urlBase = "";
 
-        let start = url.startsWith("https://valentinvachev.github.io");
+        let start = url.lastIndexOf("best-recipes");
 
         if (url.includes("sorted")) {
             urlBase = url.substring(start, url.lastIndexOf("/sorted"));
@@ -357,9 +357,9 @@ export function redirectSortingFunction(context) {
             urlBase = url.substring(start, url.lastIndexOf("/page"));
         }
 
-        console.log(urlBase);
+        console.log(`/${urlBase}/sorted/${sorting}/page/1`);
         // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
-        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
+        // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 
