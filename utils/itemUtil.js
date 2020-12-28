@@ -313,9 +313,9 @@ export function searchFilterHeader() {
             const query = searchingBox.value.toLocaleLowerCase();
 
             if (query.trim() === "") {
-                window.history.pushState({}, '', `/#/recipes/page/1`);
+                window.history.pushState({}, '', `#/recipes/page/1`);
             } else {
-                window.history.pushState({}, '', `/#/recipes/search/${query}/page/1`);
+                window.history.pushState({}, '', `#/recipes/search/${query}/page/1`);
             }
         })
     }
