@@ -349,7 +349,7 @@ export function redirectSortingFunction(context) {
         let url = window.location.href;
         let urlBase = "";
 
-        let start = url.lastIndexOf("best-recipes");
+        let start = url.lastIndexOf("#");
 
         if (url.includes("sorted")) {
             urlBase = url.substring(start, url.lastIndexOf("/sorted"));
@@ -357,16 +357,21 @@ export function redirectSortingFunction(context) {
             urlBase = url.substring(start, url.lastIndexOf("/page"));
         }
 
+
         // console.log(`/${urlBase}/sorted/${sorting}/page/1`);
         // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
-        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
+        console.log(`${urlBase}/sorted/${sorting}/page/1`);
+        console.log(`/${urlBase}/sorted/${sorting}/page/1`)
+        context.redirect(`${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 
 
 export function domainName(user) {
-    const domainName = "best-recipes";
-    const domainNameRecipe = "best-recipes";
+    // const domainName = "best-recipes";
+    // const domainNameRecipe = "best-recipes";
+    const domainName = "";
+    const domainNameRecipe = "";
 
     if (domainName) {
         user.domainName = "/" + domainName;

@@ -3,7 +3,7 @@ import * as notificationManager from "../notifications/notifications.js"
 import { registerUser } from "../../utils/data.js"
 import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 
-export async function getRequestRegister() {
+export async function getRequestRegister(context) {
 
     let user = await getUser();
 

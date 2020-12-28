@@ -4,7 +4,7 @@ import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemU
 import { resetPassword } from "../../utils/data.js";
 
 
-export async function getRequestReset() {
+export async function getRequestReset(context) {
 
     this.partials = {
         header: await this.load("./templates/header-footer/header.hbs"),
