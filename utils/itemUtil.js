@@ -357,9 +357,9 @@ export function redirectSortingFunction(context) {
             urlBase = url.substring(start, url.lastIndexOf("/page"));
         }
 
-        console.log(`/${urlBase}/sorted/${sorting}/page/1`);
+        // console.log(`/${urlBase}/sorted/${sorting}/page/1`);
         // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
-        // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
+        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 

@@ -3,7 +3,7 @@ import * as notificationManager from "../notifications/notifications.js"
 import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
 import { addRecipe } from "../../utils/data.js"
 
-export async function getRequestAdd() {
+export async function getRequestAdd(context) {
 
     let user = await getUser();
 
