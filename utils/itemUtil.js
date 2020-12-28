@@ -349,16 +349,17 @@ export function redirectSortingFunction(context) {
         let url = window.location.href;
         let urlBase = "";
 
+        let start = url.startsWith("https://valentinvachev.github.io");
 
         if (url.includes("sorted")) {
-            urlBase = url.substring(0, url.lastIndexOf("/sorted"));
+            urlBase = url.substring(start, url.lastIndexOf("/sorted"));
         } else {
-            urlBase = url.substring(0, url.lastIndexOf("/page"));
+            urlBase = url.substring(start, url.lastIndexOf("/page"));
         }
 
         console.log(urlBase);
         // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
-        context.redirect(`sorted/${sorting}/page/1`);
+        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 
