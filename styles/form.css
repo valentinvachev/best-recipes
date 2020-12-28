@@ -17,6 +17,7 @@ form fieldset {
     width: 100%;
     border: solid;
     border-color: rgba(3, 3, 3, 1);
+    padding-bottom: 4rem;
 }
 
 form p.field {

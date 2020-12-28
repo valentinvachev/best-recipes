@@ -380,10 +380,9 @@
         margin: 0.5rem;
         position: relative;
     }
-    
-    #commentsSection img {
+    /* #commentsSection img {
         border-radius: 0.5rem;
-    }
+    } */
     
     #commentsSection h4 {
         width: 100%;
@@ -408,6 +407,16 @@
     
     div.comment button {
         width: 3rem;
+    }
+    
+    div.comment>img {
+        border-radius: 0.5rem;
+        width: auto;
+        min-width: 5rem;
+        max-width: 7rem;
+        height: auto;
+        min-height: 6rem;
+        max-height: 8rem;
     }
     
     .comments button:disabled {
