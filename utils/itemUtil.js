@@ -351,7 +351,7 @@ export function redirectSortingFunction(context) {
         }
 
 
-        context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
+        context.redirect(`${urlBase}/sorted/${sorting}/page/1`);
     })
 }
 
