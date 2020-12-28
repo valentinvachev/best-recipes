@@ -37,7 +37,7 @@ export async function getRequestChef(context) {
         this.partial("./templates/chef-recipes/chef-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/#/login");
+        this.redirect("#/login");
     }
 
     function manageEvents() {

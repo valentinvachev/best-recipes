@@ -34,7 +34,7 @@ export async function getRequestCategory(context) {
         this.partial("./templates/all-recipes/specific-category.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/#/login");
+        this.redirect("#/login");
     }
 
     function manageEvents() {

@@ -17,7 +17,7 @@ export async function getRequestProfile(context) {
         this.partial("./templates/profile/profile.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/#/login");
+        this.redirect("#/login");
     }
 
     function manageEvents() {

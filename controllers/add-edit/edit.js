@@ -24,7 +24,7 @@ export async function getRequestEdit(context) {
         this.partial("./templates/add-edit/edit.hbs", templateObject, manageEvents);
 
     } else {
-        this.redirect("/#/login");
+        this.redirect("#/login");
     }
 
     function manageEvents() {

@@ -32,7 +32,7 @@ export async function getRequestMyRecipes(context) {
         this.partial("./templates/my-recipes/my-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("/#/login");
+        this.redirect("#/login");
     }
 
     function manageEvents() {
