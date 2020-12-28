@@ -14,7 +14,7 @@ export async function getRequestReset() {
     this.partial("./templates/login-register/reset-password.hbs", null, manageEvents);
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
     }
 }
 

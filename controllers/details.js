@@ -42,7 +42,7 @@ export async function getRequestDetails(context) {
 
     function manageEvents() {
 
-        searchFilterHeader();
+        searchFilterHeader(context);
 
         let area = document.getElementById("comment-area-text");
         let sectionComments = document.getElementsByClassName("comments")[0];

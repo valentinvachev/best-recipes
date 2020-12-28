@@ -41,7 +41,7 @@ export async function getRequestChef(context) {
     }
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
         redirectSortingFunction(context);
     }
 }

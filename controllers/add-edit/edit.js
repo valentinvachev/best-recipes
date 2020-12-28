@@ -28,7 +28,7 @@ export async function getRequestEdit(context) {
     }
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
     }
 }
 

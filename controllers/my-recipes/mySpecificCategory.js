@@ -50,7 +50,7 @@ export async function getRequestMyCategory(context) {
 
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
         redirectSortingFunction(context);
 
     }

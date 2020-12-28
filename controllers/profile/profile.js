@@ -23,7 +23,7 @@ export async function getRequestProfile(context) {
     function manageEvents() {
 
 
-        searchFilterHeader();
+        searchFilterHeader(context);
 
         const button = document.getElementById("change-picture");
         const buttonDelete = document.getElementById("delete-profile");

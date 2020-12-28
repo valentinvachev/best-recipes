@@ -22,7 +22,7 @@ export async function getRequestAdd() {
 
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
     }
 }
 

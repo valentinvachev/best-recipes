@@ -15,7 +15,7 @@ export async function getRequestRegister() {
     this.partial("./templates/login-register/register.hbs", user, manageEvents);
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
     }
 }
 

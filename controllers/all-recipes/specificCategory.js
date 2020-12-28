@@ -38,7 +38,7 @@ export async function getRequestCategory(context) {
     }
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
         redirectSortingFunction(context);
     }
 }
