@@ -38,7 +38,7 @@ export async function getRequestAllRecipes(context) {
 
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
         redirectSortingFunction(context);
     }
 }

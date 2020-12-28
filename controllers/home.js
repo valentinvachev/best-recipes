@@ -2,7 +2,7 @@ import { getUser } from "../utils/user.js"
 import { getAllRecipes } from "../utils/data.js"
 import { gatherInfoRecipe, searchFilterHeader, domainName } from "../utils/itemUtil.js"
 
-export async function getRequestHome() {
+export async function getRequestHome(context) {
 
     let user = await getUser();
 
@@ -32,6 +32,6 @@ export async function getRequestHome() {
     this.partial("./templates/home.hbs", user, manageEvents);
 
     function manageEvents() {
-        searchFilterHeader();
+        searchFilterHeader(context);
     }
 }

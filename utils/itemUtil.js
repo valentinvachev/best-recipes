@@ -299,7 +299,7 @@ export function filterSearch(array, predicate) {
 }
 
 
-export function searchFilterHeader() {
+export function searchFilterHeader(context) {
 
     const button = document.getElementById("recipes-search");
     const menuButtonMobile = document.getElementById("menu-mobile");
@@ -313,11 +313,17 @@ export function searchFilterHeader() {
             const query = searchingBox.value.toLocaleLowerCase();
 
             if (query.trim() === "") {
-                window.history.pushState({}, '', `#/recipes/page/1`);
+                // window.history.pushState({}, '', `#/recipes/page/1`);
+                context.redirect(`#/recipes/page/1`);
             } else {
-                window.history.pushState({}, '', `#/recipes/search/${query}/page/1`);
+                // window.history.pushState({}, '', `#/recipes/search/${query}/page/1`);
+                context.redirect(`#/recipes/search/${query}/page/1`);
             }
+
+
         })
+
+
     }
 
 
