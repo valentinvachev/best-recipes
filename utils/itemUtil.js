@@ -368,10 +368,10 @@ export function redirectSortingFunction(context) {
 
 
 export function domainName(user) {
-    // const domainName = "best-recipes";
-    // const domainNameRecipe = "best-recipes";
-    const domainName = "";
-    const domainNameRecipe = "";
+    const domainName = "best-recipes";
+    const domainNameRecipe = "best-recipes";
+    // const domainName = "";
+    // const domainNameRecipe = "";
 
     if (domainName) {
         user.domainName = "/" + domainName;
