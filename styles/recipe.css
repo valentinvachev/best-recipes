@@ -99,8 +99,10 @@ div#category-recipe {
     margin-top: 0.5em;
     margin-bottom: 0em;
     text-align: center;
+    vertical-align: middle;
     color: rgb(255, 255, 240);
     font-style: normal;
+    padding: 1%;
 }
 
 div.star {
@@ -179,7 +181,7 @@ div.star {
     }
     a.recipe-home h3 {
         height: 25%;
-        /* padding: 0 1rem; */
+        padding: 0 1rem;
     }
     div.recipe {
         width: 500px;
@@ -200,6 +202,7 @@ div.star {
     a.recipe-home h3 {
         height: 25%;
         padding: 0.2rem;
+        font-size: 90%;
     }
     div.recipe {
         width: 400px;
@@ -213,6 +216,7 @@ div.star {
     }
     div#cookIt {
         height: 8%;
+        font-size: 90%;
     }
 }
 
@@ -232,7 +236,7 @@ div.star {
         height: 25%;
         min-height: 50px;
         padding: 0.2rem;
-        font-size: 90%;
+        font-size: 2vw;
     }
     div.recipe {
         width: 100%;
@@ -267,7 +271,7 @@ div.star {
         height: 25%;
         min-height: 50px;
         padding: 0.2rem;
-        font-size: 90%;
+        font-size: 2.5vw;
     }
     div.recipe {
         width: 100%;
