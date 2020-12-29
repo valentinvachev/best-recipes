@@ -17,7 +17,7 @@ form fieldset {
     width: 100%;
     border: solid;
     border-color: rgba(3, 3, 3, 1);
-    padding-bottom: 4rem;
+    /* padding-bottom: 4rem; */
 }
 
 form p.field {
@@ -43,7 +43,7 @@ form p.field {
     padding: 0.5rem;
     color: black;
     border: 2px solid rgb(151, 150, 150);
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     border-bottom-color: lightgrey;
     border-right-color: lightgrey;
     background-color: rgb(226, 226, 226);
@@ -54,10 +54,6 @@ form p.field {
     height: 80%;
 }
 
-
-/* input#file-upload-button {
-    height: 1.5rem;
-} */
 
 .field label {
     order: 1;
@@ -79,9 +75,6 @@ option {
 }
 
 p button.submit {
-    /* border-radius: 0.5rem;
-    border-style: solid;
-    border-color: black; */
     width: 100%;
     margin: auto;
 }

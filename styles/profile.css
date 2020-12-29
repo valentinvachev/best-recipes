@@ -1,5 +1,4 @@
 .profile {
-    /* width: 70%; */
     margin: auto;
     font-size: 1rem;
 }
@@ -30,14 +29,14 @@ div.profile button:hover {
 
 #root>div>section.info-details-profile.left {
     width: 60%;
-    margin: 1em;
+    margin: 1rem;
     padding: 0;
     text-align: center;
 }
 
 #root>div>section.info-details-profile.right {
     width: 25%;
-    margin: 1em;
+    margin: 1rem;
     padding: 0;
     text-align: center;
 }
@@ -55,15 +54,16 @@ p.image-profile {
 section.info-details-profile img {
     max-width: 20rem;
     max-height: 20rem;
-    border-radius: 1em;
+    border-radius: 1rem;
     border-style: double;
     border-color: rgba(150, 150, 150, 0.336);
-    border-width: 1em;
+    border-width: 1rem;
 }
 
 .profile input {
     order: 2;
-    width: 90%;
+    width: 70%;
+    /* max-width: 20rem; */
     height: 2.5rem;
     margin: 0.5rem;
 }
@@ -77,10 +77,6 @@ section.info-details-profile img {
     color: white;
     font-style: normal;
     font-size: min(1.2vw, 1rem);
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgb(118, 118, 118);
-    border-radius: 1em;
     appearance: button;
     text-rendering: auto;
 }
@@ -90,7 +86,7 @@ section.info-details-profile img {
 }
 
 .info-details-profile.right button {
-    margin: 0 0 1em 0;
+    margin: 0 0 1rem 0;
     width: 100%;
 }
 
@@ -100,6 +96,11 @@ section.info-details-profile img {
 
 #delete-profile:hover {
     background-color: #77251f;
+}
+
+#delete-profile:disabled {
+    background-color: #868686;
+    cursor: wait;
 }
 
 p.password-profile {

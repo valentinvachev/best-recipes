@@ -7,7 +7,8 @@
 @import "./pagination.css";
 @import "./profile.css";
 @import "./add.css";
-@import "./recipe.css";
+/* @import "./recipe.css"; */
+@import "./recipe-test.css";
 @import "./dashboard.css";
 html {
     background: #ffffff url("../pictures/foodshot2Charlie.jpg") no-repeat fixed center;
@@ -24,9 +25,6 @@ a {
     text-align: center;
     vertical-align: middle;
     color: rgb(0, 0, 0);
-    /* border-style: solid;
-    border-width: 0.5rem;
-    border-color: rgb(118, 118, 118); */
     border-radius: 1rem;
     appearance: button;
     text-rendering: auto;
@@ -37,6 +35,7 @@ a {
     padding: 0.5rem;
     border: 2px solid gray;
     border-radius: 0.5rem;
+    font-size: 1rem;
 }
 
 a:hover {
@@ -49,7 +48,12 @@ a:hover {
 a:active {
     background-color: #2cbbbb;
     box-shadow: 0 0.1rem #666;
-    /* transform: translateY(1px); */
+    transform: translateY(1px);
+}
+
+a:disabled {
+    background-color: #868686;
+    cursor: wait;
 }
 
 button {
@@ -61,20 +65,17 @@ button {
     text-align: center;
     vertical-align: middle;
     color: rgb(0, 0, 0);
-    /* border-style: solid;
-    border-width: 0.5rem;
-    border-color: rgb(118, 118, 118); */
     border-radius: 1rem;
     appearance: button;
     text-rendering: auto;
     box-sizing: border-box;
     margin: 0 1rem 0 0;
-    padding: 0.5rem;
     width: 12rem;
     height: 2.5rem;
-    font-size: 1rem;
-    border: 1px solid gray;
+    padding: 0.5rem;
+    border: 2px solid gray;
     border-radius: 0.5rem;
+    font-size: 1rem;
 }
 
 button:hover {
@@ -108,7 +109,7 @@ textarea {
     min-width: 20vw;
     min-height: 8rem;
     border: 0.2rem solid rgb(151, 150, 150);
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     border-bottom-color: lightgrey;
     border-right-color: lightgrey;
     background-color: rgb(226, 226, 226);
@@ -143,15 +144,6 @@ select {
 input {
     height: 3rem;
 }
-
-
-/* select {
-    width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-} */
 
 #root {
     margin: 6rem auto;
@@ -188,7 +180,7 @@ div.content {
 
 #order-select {
     position: absolute;
-    right: 2em;
+    right: 2rem;
     top: 4rem;
 }
 
@@ -284,10 +276,10 @@ nav.navbar a:hover {
 
 @media only screen and (max-width: 1400px) {
     html {
-        width: 100%;
+        /* width: 100%; */
         max-width: 900px;
         margin: auto;
-        height: 100%;
+        /* height: 100%; */
     }
     #root {
         text-align: center;
