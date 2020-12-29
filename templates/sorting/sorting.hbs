@@ -1,0 +1,12 @@
+<div id="order-select">
+    <select name="order" id="select-sorting">
+        {{#if sorting}}
+        <option selected hidden value="{{sorting}}">{{sortingTranslated}}</option>
+        {{else}}
+        <option selected hidden value="Подреди по">Подреди по</option>
+        {{/if}}
+        <option value="latest">Последно добавени</option>
+        <option value="rating">Оценка</option>
+        <option value="popularity">Популярност</option>
+    </select>
+</div>

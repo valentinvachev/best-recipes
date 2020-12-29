@@ -1,0 +1,119 @@
+{{> header}}
+{{> addRecipe}}
+<div class="content specific">
+    <section id="timePortions">
+        <h1>{{name}}</h1>
+        <a class="tooltip" id="added-chef" href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">Добавено от <span>{{username}}</span><span class="tooltiptext">Вижте и другите рецепти на този готвач</span></a>
+        {{!-- <div id="added-chef" class="tooltip">Добавено от <span><a class="tooltiptext" href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">{{username}}</a></span></div> --}}
+        <div>
+            {{#if timeOne}}
+            <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Frinr6RxbT.png?alt=media&token=fac8a3e8-6fe1-47e6-b0c4-35f1178d817d" alt="">1 минута
+            {{else}}
+            {{#if time}}
+            <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Frinr6RxbT.png?alt=media&token=fac8a3e8-6fe1-47e6-b0c4-35f1178d817d" alt="">{{time}} минути
+            {{/if}}
+            {{/if}}
+            {{#if portionsOne}}
+            <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2FPinClipart.com_fork-clipart_305478.png?alt=media&token=60e05e83-096e-49a0-8a11-aaa211a5ed65">1 порция
+            {{else}}
+            {{#if portions}}
+            <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2FPinClipart.com_fork-clipart_305478.png?alt=media&token=60e05e83-096e-49a0-8a11-aaa211a5ed65">{{portions}} порции
+            {{/if}}
+            {{/if}}
+        </div>
+    </section>
+    <section class="info-details left" id="picture-holder">
+        <img src="{{urlImage}}" alt="">
+    </section>
+    <section class="info-details right">
+        <div id="products-cooking">
+            <h3>Необходими продукти:</h3>
+            <ul>
+                {{#each products}}
+                {{> product}}
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+    <section class="info-details preparation-info">
+        <h3>Начин на приготвяне:</h3>
+        {{#each preparation}}
+        {{> preparationStage}}
+        {{/each}}
+        {{!-- <p>{{preparation}}</p> --}}
+    </section>
+    {{!-- <section id="main-chef" class="left" data-id="{{idUser}}">
+            <a href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">Други рецепти от този готвач</a>
+    </section> --}}
+    <section class="actions" id="actions">
+        {{#unless isCreator}}
+        {{#unless isVoter}}
+        <div id="voting">
+            <select name="rating" id="rating">
+                <option value="10">10 - Облизвам си пръстите</option>
+                <option value="9">9 - Ще сготвя пак веднага щом свърши</option>
+                <option value="8">8 - Беше много вкусно</option>
+                <option value="7">7 - Смених няколко съставки и стана вкусно</option>
+                <option value="6">6 - Бих опитал/а пак</option>
+                <option value="5">5 - Получи се добре</option>
+                <option value="4">4 - Мммм. Може и по-добре</option>
+                <option value="3">3 - Все пак намерих нещо вкусно</option>
+                <option value="2">2 - Няма да го повторя</option>
+                <option value="1">1 - Рецептата не ми хареса изобщо</option>
+            </select>
+            <button id="rating-button">Дайте своята оценка</button>
+        </div>
+        <div id="already-voted">Вече гласувахте за тази рецепта</div>
+        {{/unless}}
+        {{#if isVoter}}
+        <div>Вече гласувахте за тази рецепта</div>
+        {{/if}}
+        {{/unless}}
+        {{#if isCreator}}
+        <a href="{{domainName}}/#/delete/{{id}}" class="action-owner" id="delete-recipe">Изтрий рецептата</a>
+        <a href="{{domainName}}/#/edit/{{id}}" class="action-owner">Промени рецептата</a>
+        {{/if}}
+    </section>
+
+    <section class="comments">
+        <h3>Коментари</h3>
+        <textarea name="" id="comment-area-text" cols="20" rows="5"
+            placeholder="Сподели своя коментар за рецептата"></textarea>
+        <button class="comment-button right">Публикувай</button>
+        <div id="commentsSection">
+            {{#each comments}}
+            {{> comment}}
+            {{else}}
+            <div>Все още няма коментари</div>
+            {{/each}}
+        </div>
+
+        <div id="pagination">
+            {{#if previousPage}}
+            <span>Предишна страница</span>
+            {{else}}
+            <span style="visibility: hidden;">Предишна страница</span>
+            {{/if}}
+            <div class="pagination">
+                {{#if previousPage}}
+                <a href="{{domainName}}/#/recipe/{{id}}/comments/page/{{previousPage}}" class=".active">❮</a>
+                {{else}}
+                <a href="{{domainName}}/#/recipe/{{id}}/comments/page/{{previousPage}}" class=".active" style="visibility: hidden;">❮</a>
+                {{/if}}
+                {{#if nextPage}}
+                <a href="{{domainName}}/#/recipe/{{id}}/comments/page/{{nextPage}}" class=".active">❯</a>
+                {{else}}
+                <a href="{{domainName}}/#/recipe/{{id}}/comments/page/{{nextPage}}" class=".active" style="visibility: hidden;">❯</a>
+                {{/if}}
+            </div>
+            {{#if nextPage}}
+            <span>Следваща страница</span>
+            {{else}}
+            <span style="visibility: hidden;">Следваща страница</span>
+            {{/if}}
+        </div>
+    </section>
+</div>
+
+
+{{> footer}}

@@ -1,0 +1,152 @@
+.profile {
+    margin: auto;
+    font-size: 1rem;
+}
+
+.profile p {
+    text-align: center;
+}
+
+div.profile button {
+    color: black;
+    /* font-weight: bolder; */
+    width: 12rem;
+    max-width: 12rem;
+    margin: auto;
+    font-size: 1rem;
+}
+
+div.profile button:hover {
+    font-weight: bolder;
+    color: white;
+}
+
+#username-profile {
+    height: 20%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+#root>div>section.info-details-profile.left {
+    width: 60%;
+    margin: 1rem;
+    padding: 0;
+    text-align: center;
+}
+
+#root>div>section.info-details-profile.right {
+    width: 25%;
+    margin: 1rem;
+    padding: 0;
+    text-align: center;
+}
+
+#root>div>section.info-details-profile p.field.image-profile {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+p.image-profile {
+    width: 80%;
+}
+
+section.info-details-profile img {
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 1rem;
+    border-style: double;
+    border-color: rgba(150, 150, 150, 0.336);
+    border-width: 1rem;
+}
+
+.profile input {
+    order: 2;
+    width: 70%;
+    /* max-width: 20rem; */
+    height: 2.5rem;
+    margin: 0.5rem;
+}
+
+#username-profile {
+    text-align: center;
+}
+
+.info-details-profile button {
+    text-align: center;
+    color: white;
+    font-style: normal;
+    font-size: min(1.2vw, 1rem);
+    appearance: button;
+    text-rendering: auto;
+}
+
+.info-details-profile button:disabled {
+    cursor: default;
+}
+
+.info-details-profile.right button {
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+
+#delete-profile {
+    background-color: #bb352c;
+}
+
+#delete-profile:hover {
+    background-color: #77251f;
+}
+
+#delete-profile:disabled {
+    background-color: #868686;
+    cursor: wait;
+}
+
+p.password-profile {
+    display: none;
+}
+
+button.password-profile {
+    display: none;
+}
+
+.info-details-profile.right button {
+    margin: 0.5rem;
+}
+
+@media only screen and (max-width: 1400px) {
+    div.profile {
+        width: 95%;
+        margin: auto;
+        height: auto;
+    }
+    label {
+        text-align: center;
+    }
+    div.content button {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+    #root>div>section.info-details-profile.left {
+        float: none;
+        width: 100%;
+    }
+    #root>div>section.info-details-profile.right {
+        float: none;
+        width: 100%;
+    }
+    #root>div>section.info-details-profile * {
+        width: 80%;
+    }
+    #root section.info-details-profile img {
+        width: auto;
+    }
+    .profile input {
+        display: block;
+        margin: auto;
+        width: 80%;
+        height: 3rem;
+        max-width: 20rem;
+    }
+}

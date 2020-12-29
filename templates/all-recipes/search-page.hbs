@@ -1,0 +1,22 @@
+{{> header}}
+{{> addRecipe}}
+<div class="content">
+    <section class="article">
+       {{> sorting}}
+        <h2>Всички рецепти. Търсене по име - "{{query}}"</h2>
+        <p style="font-style: italic;">Храната е щастие. Ние споделяме щастието с вас.</p>
+        <hr>
+        {{> dashboard}}
+        <div class="recipe">{{#if recipes}}
+            {{#each recipes}}
+            {{> recipe}}
+            {{/each}}
+            {{else}}
+            <br>
+            <div>Няма рецепти с подобно име</div>
+            {{/if}}
+        </div>
+    </section>
+   {{> pagination}}
+</div>
+{{> footer}}

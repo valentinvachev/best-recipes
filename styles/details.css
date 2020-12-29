@@ -1,0 +1,707 @@
+    div.specific {
+        margin: auto;
+    }
+
+    #timePortions {
+        position: relative;
+        border-bottom: black;
+        border-width: 0 0 0.01rem 0;
+        border-style: solid;
+        height: auto;
+        min-height: 7rem;
+    }
+
+    #timePortions img {
+        height: 3.5rem;
+        width: 3.5rem;
+        margin: 0 0.5rem 0 0;
+    }
+
+    #timePortions div {
+        /* margin: 1em; */
+        position: absolute;
+        top: -1rem;
+        right: 1rem;
+    }
+
+    #timePortions h1 {
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        margin: 0;
+        word-break: keep-all;
+    }
+
+    a#added-chef {
+        position: absolute;
+        top: 0rem;
+        left: 3rem;
+        /* border: 1px solid gray; */
+        width: fit-content;
+        min-width: 15rem;
+        height: fit-content;
+        padding: 0.5rem;
+        /* border-radius: 0.5rem; */
+        color: black;
+        background: #2cbbbb;
+        vertical-align: middle;
+    }
+
+    a#added-chef span {
+        font-weight: bolder;
+    }
+
+    a#added-chef:hover {
+        color: white;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: fit-content;
+        background-color: rgb(0, 0, 0, 0.5);
+        color: #fff;
+        text-align: center;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0;
+        position: absolute;
+        z-index: 1;
+        top: -0.5rem;
+        left: 105%;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgb(0, 0, 0, 0.5) transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    #picture-holder {
+        text-align: left;
+        width: 50%;
+        margin: 1rem auto;
+        padding: 0;
+    }
+
+    #picture-holder img {
+        max-width: 100%;
+        max-height: 600px;
+        margin: auto;
+        border-radius: 1rem;
+        border-style: double;
+        border-color: rgba(150, 150, 150, 0.336);
+        border-width: 1rem;
+        margin: 0 0 0 2rem;
+    }
+
+    section.info-details.right {
+        width: 40%;
+        padding: 0 0 0 2rem;
+    }
+
+    #products-cooking h3 {
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .preparation-info h3 {
+        margin-top: 0.2em;
+        margin-bottom: 0.5em;
+    }
+
+    #root .preparation-info {
+        border-style: solid;
+        border-radius: 0.5rem;
+        border-color: rgba(150, 150, 150, 0.582);
+        border-width: 0.02rem 0;
+        background: rgb(44, 186, 186, 0.2);
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .preparation-info p {
+        margin: 0;
+        width: 100%;
+        word-wrap: break-word;
+        margin-bottom: 0.2rem;
+        overflow: hidden;
+    }
+/* 
+    #main-chef {
+        width: 40%;
+        text-align: left;
+        margin: 0 0 0 3rem;
+    } */
+
+    /* #main-chef a {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        box-shadow: 0 5px #999;
+        border: none;
+        background-color: #2cbbbb;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        max-width: 80%;
+        margin: 0.5rem;
+    } */
+
+    /* #main-chef img {
+        height: 4rem;
+        width: 4rem;
+        margin: 0;
+    } */
+
+    /* .info-details {
+    margin: 0;
+} */
+
+    div.specific section.actions {
+        /* float: right; */
+        width: 100%;
+        /* max-width: 1500px; */
+        margin: auto;
+        text-align: center;
+    }
+
+    /* div.specific section.actions a {
+        width: 12rem;
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        box-shadow: 0 5px #999;
+        border: none;
+        background-color: #2cbbbb;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 1rem;
+        padding: 0.5em;
+        border-radius: 1em;
+        max-width: 80%;
+        margin: 0.5rem;
+    } */
+
+    /* .content.specific section {
+    margin: 0;
+} */
+
+    /* #root>div.content.specific>section.info-details.left {
+    text-align: start;
+} */
+
+    /* #root>div.content.specific>section.info-details.right {
+    width: 35%;
+} */
+
+    /* div.actions { */
+
+    /* border-radius: 1em;
+    border-style: double;
+    border-color: rgba(150, 150, 150, 0.336);
+    border-width: 1em; */
+
+    /* width: 45%;
+        text-align: center;
+        float: right;
+        margin-left: 5em;
+        margin-top: 10%;
+        text-align: center;
+    } */
+
+    #rating {
+        width: 40%;
+        margin: 0 0 0.8rem 0;
+    }
+
+    /* #rating-button {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        box-shadow: 0 5px #999;
+        border: none;
+        background-color: #2cbbbb;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 0.8rem;
+        padding: 0.5em;
+        border-radius: 1em;
+        max-width: 80%;
+        margin: 0.5rem;
+        font-size: 1rem;
+    } */
+
+    /* #root>div>section.actions.left {
+    width: 40%;
+} */
+
+    /* #root>div>section.actions.right {
+    width: 40%;
+    padding-bottom: 0;
+    margin: 1rem;
+    float: right;
+    /* height: 20vh; */
+
+    /* } */
+
+    /* #root>div>section.actions.right div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+} */
+
+    /* .actions button {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 5px #999;
+    background-color: #2cbbbb;
+    text-align: center;
+    color: white;
+    font-style: normal;
+    font-size: medium;
+    padding: 0.5em;
+    border-style: solid;
+    border-radius: 1em;
+    max-width: 80%;
+    margin: auto;
+} */
+
+    /* .actions button:hover {
+        cursor: pointer;
+        background-color: #228f8f;
+        color: white;
+    } */
+
+    /* .actions button:active {
+        background-color: #2cbbbb;
+        box-shadow: 0 2px #666;
+        transform: translateY(1px);
+    } */
+
+    /* .actions button:disabled {
+        background-color: #868686;
+        cursor: wait;
+    }
+     */
+
+    .actions select {
+        width: 80%;
+        background-color: #f9fafa;
+        text-align: center;
+        color: black;
+        font-style: normal;
+        font-size: medium;
+        padding: 0.5em;
+        font-size: 1rem;
+    }
+
+    /* .actions select option {
+    /* background-color: #f9fafa;
+    text-align: center;
+    color: black;
+    font-style: normal;
+    font-size: large;   
+    padding: 0.5em; */
+
+    /* margin: 0;
+    padding: 0;
+    text-align: center;
+} */
+
+    .actions select:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    #root>div>section.comments {
+        padding-top: 1rem;
+        width: 80%;
+        max-width: 100%;
+        /* margin: 1rem; */
+    }
+
+    #already-voted {
+        display: none;
+    }
+
+    button.comment-button.right {
+        margin-top: 0.5rem;
+        width: 12rem;
+    }
+
+    /* .comments button {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        box-shadow: 0 5px #999;
+        background-color: #2cbbbb;
+        text-align: center;
+        color: white;
+        font-style: normal;
+        font-size: medium;
+        padding: 0.5em;
+        border-style: solid;
+        border-radius: 1em;
+        width: auto;
+        max-width: 15rem;
+        margin: auto;
+    } */
+
+    /*     
+    .comments button:hover {
+        cursor: pointer;
+        background-color: #228f8f;
+        color: white;
+    } */
+
+    /* .comments button:disabled {
+        background-color: #868686;
+        cursor: wait;
+    }
+     */
+
+    /* .comments button:active {
+        background-color: #2cbbbb;
+        box-shadow: 0 2px #666;
+        transform: translateY(1px);
+    } */
+
+    #commentsSection {
+        margin-top: 7rem;
+    }
+
+    #commentsSection h4 {
+        margin: 0 0 0 0.5rem;
+        font-size: 100%;
+        padding: 0;
+        height: auto;
+        width: 97%;
+        max-width: 97%;
+        word-wrap: break-word;
+    }
+
+    #commentsSection * {
+        margin: 0.5rem;
+        position: relative;
+    }
+
+    /* #commentsSection img {
+        border-radius: 0.5rem;
+    } */
+
+    #commentsSection h4 {
+        width: 100%;
+        text-align: left;
+    }
+
+    #commentsSection div.comment {
+        background-color: rgb(213, 208, 203, 0.4);
+        border-style: solid;
+        border-radius: 1rem;
+        border-color: rgba(150, 150, 150, 0.582);
+        border-width: 0.2rem 0.1rem 0.2rem 0.1rem;
+        /* border-bottom-width: 0.02em;
+        border-top-width: 0.02em;
+        border-left-width: 0.01em;
+        border-right-width: 0.01em; */
+        width: 50%;
+        margin-left: 0;
+        max-width: 40vw;
+        position: relative;
+    }
+
+    div.comment button {
+        width: 3rem;
+    }
+
+    div.comment>img {
+        border-radius: 0.5rem;
+        width: auto;
+        min-width: 5rem;
+        max-width: 7rem;
+        height: 6rem;
+    }
+
+    .comments button:disabled {
+        background-color: #868686;
+        cursor: wait;
+    }
+
+    #comment-date {
+        position: absolute;
+        top: 0;
+        right: 1em;
+        font-size: 0.8rem;
+    }
+
+    .comment {
+        margin-top: 5rem;
+        /* border-style: solid;
+    border-radius: 1em;
+    border-color: #2cbbbb; */
+    }
+
+    .comment img {
+        height: 6rem;
+        width: 6rem;
+        margin: 1rem;
+        border-radius: 0.2rem;
+        border-style: solid;
+        border-width: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    #comment-area {
+        /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; */
+        /* font-size: 100%; */
+        /* padding: 0; */
+        height: auto;
+        width: 100%;
+        max-width: 97%;
+        word-wrap: break-word;
+        margin: 0.2rem 0.2rem 0.2rem 0.4rem;
+        margin-bottom: 0.5rem;
+        vertical-align: middle;
+        overflow: auto;
+        border-width: 0.2rem;
+        border-style: solid;
+        border-color: rgba(92, 83, 83, 0.1);
+        border-radius: 1rem;
+        padding: 0.5rem;
+    }
+
+    #comment-area-edit {
+        width: 90%;
+        margin: 0.5rem;
+        display: none;
+    }
+
+    #edit-comment img {
+        height: 1rem;
+        width: 1rem;
+        margin: 0.2em;
+    }
+
+    #edit-comment {
+        position: absolute;
+        top: 4rem;
+        right: 4.5em;
+    }
+
+    #delete-comment img {
+        height: 1rem;
+        width: 1rem;
+        margin: 0.2em;
+    }
+
+    #delete-comment {
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+    }
+
+    #publish-comment {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        right: 4.5em;
+        color: black;
+        padding: 0.7rem;
+        width: 12rem;
+    }
+
+    #publish-comment:hover {
+        color: white;
+        font-weight: bolder;
+    }
+
+    .action-owner {
+        float: right;
+    }
+
+    /* a.action-owner {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 5px #999;
+    background-color: #2cbbbb;
+    text-align: center;
+    color: white;
+    font-style: normal;
+    font-size: medium;
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(118, 118, 118);
+    border-radius: 1em;
+    appearance: button;
+    text-rendering: auto;
+    box-sizing: border-box;
+    margin: 0 1em 0 0;
+    font: 400 16px Arial;
+} */
+
+    #delete-recipe {
+        background-color: #bb352c;
+    }
+
+    #delete-recipe:hover {
+        background-color: #77251f;
+        color: white;
+    }
+
+    #delete-recipe:disabled {
+        color: white;
+    }
+
+    /* #delete-recipe:active {
+    background-color: #bb352c;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+} */
+
+    /*     
+    a.action-owner:hover {
+        cursor: pointer;
+        background-color: #228f8f;
+        color: white;
+    }
+    
+    a.action-owner:active {
+        background-color: #2cbbbb;
+        box-shadow: 0 2px #666;
+        transform: translateY(1px);
+    } */
+
+    @media only screen and (max-width: 1400px) {
+        a#added-chef {
+            top: -4rem;
+            left: 0;
+        }
+        .tooltiptext {
+            display: none;
+        }
+        div.specific {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+        }
+            #picture-holder img {
+                margin: auto;
+            }
+        #timePortions {
+            height: 10rem;
+        }
+        #timePortions h1 {
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            left: 0;
+        }
+        #timePortions div {
+            position: static;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        #root div.content section.info-details {
+            float: none;
+            width: 100%;
+            margin: auto;
+            padding: 2rem;
+        }
+        section#actions {
+            float: none;
+            width: 100%;
+            margin: 1rem auto;
+            text-align: center;
+        }
+        #root>div.content.specific>section.info-details.left {
+            float: none;
+            width: 100%;
+        }
+        #root>div.content.specific>section.info-details.right {
+            float: none;
+            width: 100%;
+            text-align: left;
+        }
+        #commentsSection>div {
+            min-width: 100%;
+        }
+        #root>div>section.comments {
+            width: 90%;
+            margin: auto;
+            max-width: 600px;
+        }
+        div#pagination {
+            width: 100%;
+        }
+        div#pagination span {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        #rating {
+            width: 80%;
+        }
+
+        button#publish-comment {
+            width: 8rem;
+            /* font-size: 3vw;
+            margin-right: 8%; */
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        a#delete-recipe {
+            margin-bottom: 0.5rem;
+        }
+        p#comment-date {
+            font-size: 0.6rem;
+        }
+        div.comment>img {
+            border-radius: 0.5rem;
+            width: auto;
+            min-width: 4rem;
+            max-width: 6rem;
+            height: 5rem;
+        }
+
+        #root>div>section.comments {
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        
+        button#publish-comment {
+            width: 7rem;
+            /* font-size: 3vw;
+            margin-right: 8%; */
+        }
+    }

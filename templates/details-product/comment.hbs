@@ -1,0 +1,16 @@
+<div class="comment" data-id="{{index}}">
+    {{#if photoUrl}}
+    <img src="{{photoUrl}}" alt="" class="">
+    {{else}}
+    <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fpngfind.com-cooking-png-637582.png?alt=media&token=295ed658-1ac5-4a63-a38b-ca3484da5c51" alt="" class="">
+    {{/if}}
+    <h4>{{author}}</h4>
+    <p id="comment-date">Публикувано на {{datePublished}}</p>
+    {{#if isCreatorComment}}
+    <button id="edit-comment"><img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fedit.png?alt=media&token=d17b3f80-8b4e-4410-86c8-2b887309fdbf" alt="" id="edit-comment-pic"></button>
+    <button id="publish-comment">Публикувай</button>
+    <button id="delete-comment"><img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fedit2.png?alt=media&token=4f9646e2-27f4-41f9-955e-588b236ef2d1" alt="" id="delete-comment-pic"></button>
+    {{/if}}
+    <p id="comment-area">{{comment}}</p>
+    <textarea name="" id="comment-area-edit" cols="30" rows="10">{{comment}}</textarea>
+</div>

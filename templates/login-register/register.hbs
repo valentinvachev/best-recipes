@@ -1,0 +1,30 @@
+{{> header}}
+<div class="container auth">
+    <form action="{{domainName}}/#/register" method="post">
+        <fieldset>
+            <p class="field email">
+                <input type="email" id="email" name="email">
+                <label for="email">Емейл:</label>
+            </p>
+            <p class="field username">
+                <input type="username" id="username" name="username">
+                <label for="username">Потребителско име:</label>
+            </p>
+            <p class="field password">
+                <input type="password" id="password" name="password">
+                <label for="password">Парола:</label>
+            </p>
+            <p class="field password">
+                <input type="password" id="repeatPassword" name="repeatPassword">
+                <label for="repeatPassword">Повтори парола:</label>
+            </p>
+            <p class="field submit">
+                <button class="btn submit" type="submit">Регистрирай</button>
+            </p>
+            <p class="field">
+                <span>Ако вече имаш създаден профил:<a href="{{domainName}}/#/login">Влез тук</a></span>
+            </p>
+        </fieldset>
+    </form>
+</div>
+{{> footer}}

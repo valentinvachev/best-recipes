@@ -1,0 +1,22 @@
+{{> header}}
+{{> addRecipe}}
+<div class="content">
+    {{> sorting}}
+    <section class="article">
+        <h2>Всички рецепти</h2>
+        <p style="font-style: italic;">Храната е щастие. Ние споделяме щастието с вас.</p>
+        <hr>
+        {{> dashboard}}
+        <div class="recipe">{{#if recipes}}
+            {{#each recipes}}
+            {{> recipe}}
+            {{/each}}
+            {{else}}
+            <br>
+            <div>Все още няма добавени рецепти</div>
+            {{/if}}
+        </div>
+    </section>
+    {{> pagination}}
+</div>
+{{> footer}}

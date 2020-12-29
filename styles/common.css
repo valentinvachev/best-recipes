@@ -1,0 +1,325 @@
+@import "./typography.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./form.css";
+@import "./notification.css";
+@import "./details.css";
+@import "./pagination.css";
+@import "./profile.css";
+@import "./add.css";
+/* @import "./recipe.css"; */
+@import "./recipe-test.css";
+@import "./dashboard.css";
+html {
+    background: #ffffff url("../pictures/foodshot2Charlie.jpg") no-repeat fixed center;
+    position: relative;
+    background-size: cover;
+}
+
+a {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background-color: #2cbbbb;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    appearance: button;
+    text-rendering: auto;
+    box-sizing: border-box;
+    margin: 0 1rem 0 0;
+    width: 12rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 2px solid gray;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: #228f8f;
+    font-weight: bolder;
+    color: white;
+}
+
+a:active {
+    background-color: #2cbbbb;
+    box-shadow: 0 0.1rem #666;
+    transform: translateY(1px);
+}
+
+a:disabled {
+    background-color: #868686;
+    cursor: wait;
+}
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background-color: #2cbbbb;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(0, 0, 0);
+    border-radius: 1rem;
+    appearance: button;
+    text-rendering: auto;
+    box-sizing: border-box;
+    margin: 0 1rem 0 0;
+    width: 12rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 2px solid gray;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #228f8f;
+    font-weight: bolder;
+    color: white;
+}
+
+button:active {
+    background-color: #2cbbbb;
+    box-shadow: 0 0.1rem #666;
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background-color: #868686;
+    cursor: wait;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0%;
+}
+
+textarea {
+    order: 2;
+    margin: 0;
+    width: 100%;
+    min-width: 20vw;
+    min-height: 8rem;
+    border: 0.2rem solid rgb(151, 150, 150);
+    border-radius: 0.5rem;
+    border-bottom-color: lightgrey;
+    border-right-color: lightgrey;
+    background-color: rgb(226, 226, 226);
+    font-size: 0.8rem;
+    resize: none;
+    overflow-y: scroll;
+    padding: 0.2rem;
+}
+
+select {
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.2rem;
+    color: black;
+    border: 0.1rem solid rgb(151, 150, 150);
+    border-radius: 0.5em;
+    border-bottom-color: lightgrey;
+    border-right-color: lightgrey;
+    background-color: rgb(226, 226, 226);
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+input {
+    height: 3rem;
+}
+
+#root {
+    margin: 6rem auto;
+    width: 1400px;
+}
+
+
+/* COMMON */
+
+div.content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255, 0.90);
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.content section {
+    margin: 2em;
+    padding: 2em;
+    width: 100%;
+    text-align: left;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+
+/* select.article {
+    
+} */
+
+#order-select {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+}
+
+
+/* .search label {
+    margin-right: 0.5em;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: normal;
+} */
+
+.btn-view {
+    width: 100%;
+    border-radius: 0;
+    border-style: double;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 0;
+    align-items: center;
+}
+
+
+/* #cookIt:hover {
+    background-color: #1a6868;
+    cursor: default;
+    color: white;
+    border-radius: 0.5em;
+    border-width: 0.2em;
+} */
+
+nav.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+    letter-spacing: 0.05rem;
+    padding: 0.8rem 1rem;
+    color: white;
+    margin: 0;
+    /* margin-bottom: 3em;
+    width: 70%;
+    position: relative; */
+}
+
+
+/* .dashboard li {
+    float: left;
+    margin: 0;
+    padding: 0;
+} */
+
+
+/* nav.navbar ul li a */
+
+
+/* nav.navbar a {
+    float: left;
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: #2cbbbb;
+    color: rgb(255, 255, 255);
+}
+
+nav.navbar a:hover {
+    background: #218d8d;
+} */
+
+
+/* nav.navbar ul li a:active */
+
+
+/* nav.navbar a:active {
+    background-color: #2cbbbb;
+    transform: translateY(2px);
+} */
+
+.content section {
+    float: left;
+}
+
+.content .left {
+    width: 50%;
+}
+
+.content .right {
+    width: 25%;
+}
+
+@media only screen and (max-width: 1400px) {
+    html {
+        /* width: 100%; */
+        max-width: 900px;
+        margin: auto;
+        /* height: 100%; */
+    }
+    #root {
+        text-align: center;
+        max-width: 90%;
+    }
+    div.content {
+        padding: 0.5rem;
+    }
+    div.content>section {
+        margin: 5rem 1rem 1rem 1rem;
+        padding: 1rem;
+    }
+    #order-select {
+        position: absolute;
+        top: 1rem;
+    }
+    div.content h2 {
+        width: 100%;
+        font-size: min (1rem, 6vw);
+    }
+    section.article {
+        max-width: 100%;
+        margin: 2rem auto;
+        /* height: auto; */
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #order-select {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        width: 35%;
+    }
+    /* div.recipe {
+        width: 100%;
+    } */
+    /* div.content section.article {
+        padding: 0;
+        margin: 1rem auto;
+        width: 100%;
+    } */
+}

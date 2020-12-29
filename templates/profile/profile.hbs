@@ -1,0 +1,38 @@
+{{> header}}
+<div class="content profile">
+    <section id="username-profile">
+        <h1>{{displayName}}</h1>
+        <p>Емейл: {{email}}</p>
+    </section>
+    <section class="info-details-profile left">
+        {{#if photoUrl}}
+        <img src="{{photoUrl}}" alt="">
+        {{else}}
+        <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Fpngfind.com-cooking-png-637582.png?alt=media&token=295ed658-1ac5-4a63-a38b-ca3484da5c51" alt="">
+        {{/if}}
+        <p class="field image-profile">
+            <input type="file" id="image-profile" name="image">
+            {{!-- <label for="image">Снимка:</label> --}}
+            {{!-- <a href="">Смени</a> --}}
+            <button id="change-picture">Смени</button>
+        </p>
+    </section>
+    <section class="info-details-profile right">
+        {{!-- <a href="" class="action-profile">Промени името</a>
+        <a href="" class="action-profile">Смени паролата</a>
+        <a href="" class="action-profile" id="delete-profile">Изтрии профила</a> --}}
+        {{!-- <button class="action-profile">Промени името</button> --}}
+        <button class="action-profile">Смени паролата</button>
+        <button class="action-profile" id="delete-profile">Изтрий профила</button>
+        <p class="field password-profile">
+            <label for="password">Нова парола:</label>
+            <input type="password" id="password" name="password">
+        </p>
+        <p class="field password-profile">
+            <label for="repeatPassword">Повтори парола:</label>
+            <input type="password" id="repeatPassword" name="repeatPassword">
+        </p>
+        <button class="action-profile password-profile">Запази промените</button>
+    </section>
+</div>
+{{> footer}}

@@ -1,0 +1,24 @@
+<div id="pagination">
+    {{#if previousPage}}
+    <span>Предишна страница</span>
+    {{else}}
+    <span style="visibility: hidden;">Предишна страница</span>
+    {{/if}}
+    <div class="pagination">
+        {{#if previousPage}}
+        <a href="{{urlBeforePage}}/{{previousPage}}" class=".active">❮</a>
+        {{else}}
+        <a href="{{urlBeforePage}}/{{previousPage}}" class=".active" style="visibility: hidden;">❮</a>
+        {{/if}}
+        {{#if nextPage}}
+        <a href="{{urlBeforePage}}/{{nextPage}}" class=".active">❯</a>
+        {{else}}
+        <a href="{{urlBeforePage}}/{{nextPage}}" class=".active" style="visibility: hidden;">❯</a>
+        {{/if}}
+    </div>
+    {{#if nextPage}}
+    <span>Следваща страница</span>
+     {{else}}
+    <span style="visibility: hidden;">Следваща страница</span>
+    {{/if}}
+</div>
