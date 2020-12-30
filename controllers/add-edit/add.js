@@ -23,17 +23,58 @@ export async function getRequestAdd(context) {
 
     function manageEvents() {
         searchFilterHeader(context);
+
+        var quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: [
+                    ['bold', 'italic'],
+                    ['link'],
+                    [{ list: 'ordered' }, { list: 'bullet' }]
+                ]
+            },
+            placeholder: '',
+            theme: 'snow'
+        });
+
+        var quill = new Quill('#products-editor-container', {
+            modules: {
+                toolbar: [
+                    ['bold', 'italic'],
+                    ['link'],
+                    [{ list: 'ordered' }, { list: 'bullet' }]
+                ]
+            },
+            placeholder: '',
+            theme: 'snow'
+        });
+
+
+      
+        let button = document.querySelector("button.btn.submit");
+        button.addEventListener("click", () => {
+            let paragraph = document.getElementsByClassName("ql-editor")[1];
+            let preparation = document.querySelector("#preparation");
+            preparation.value = paragraph.innerHTML;
+
+            let paragraphProducts = document.getElementsByClassName("ql-editor")[0];
+            let products = document.querySelector("#products");
+            products.value = paragraphProducts.innerHTML;
+        })
     }
 }
 
 
 export async function postRequestAdd(context) {
 
+    console.log(this.params);
+
     let user = await getUser();
 
     let { name, time, portions, category, products, preparation } = this.params;
     const image = document.getElementById('image').files[0];
 
+    const productsTextToCheck = document.getElementsByClassName("ql-editor")[0].textContent;
+    const preparationTextToCheck = document.getElementsByClassName("ql-editor")[1].textContent;
     const creator = user.email;
     const username = user.displayName
     const idUser = user.localId;
@@ -41,16 +82,13 @@ export async function postRequestAdd(context) {
     const peopleRated = [{ email: "null", rating: 0 }];
     const timesRated = 0;
     const dateAdded = new Date().toISOString();
-
-    products = products.split("\n").filter(e => e !== "");
-    preparation = preparation.split("\n").filter(e => e !== "");
     const comments = [{ author: "", comment: "", datePublished: "" }];
 
     if (!name) {
         notificationManager.invalidInfo("Добави име на рецептата");
-    } else if (products.length === 0) {
+    } else if (!productsTextToCheck) {
         notificationManager.invalidInfo("Полето с продукти не може да бъде празно");
-    } else if (preparation.length === 0) {
+    } else if (!preparationTextToCheck) {
         notificationManager.invalidInfo("Полето с инструкции за приготвяне не може да бъде празно");
     } else if (!image) {
         notificationManager.invalidInfo("Добави снимка към рецептата");
@@ -58,7 +96,7 @@ export async function postRequestAdd(context) {
 
 
         try {
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Публикувай");
+            waitingButton(document.querySelector("button.btn.submit"), "Моля изчакайте...", "Публикувай");
 
             let file = document.getElementById("image").files[0];
             let fileName = file.name + Math.random();

@@ -15,14 +15,38 @@
                 <input type="number" id="portions" name="portions">
                 <label for="portions">Порции:</label>
             </p>
-            <p class="field products">
+            {{!-- <p class="field products">
                 <textarea name="products" id="products" placeholder="Пример: кисело мляко - 400 грама"></textarea>
                 <label for="products">Добави продукт: * <span>(по един продукт на ред)</span></label>
-            </p>
-            <p class="field preparation">
+            </p> --}}
+            <p class="for-label">
+             <label for="products">Добави продукт: * (по един продукт на ред)</label>
+             </p>
+            <div class="row form-group">
+                <input name="products" type="hidden" id="products">
+                <div id="products-editor-container">
+                    <p></p>
+                </div>
+            </div>
+            {{!-- <div id="editor-container">
+                <p class="field preparation"></p>
                 <textarea name="preparation" id="preparation"></textarea>
                 <label for="preparation">Начин на приготвяне: *</label>
+                </p>
+            </div> --}}
+            {{!-- <label for="preparation">Начин на приготвяне: *</label>
+            <div id="editor-container" style="background-color: white; color: black">
+                <textarea name="preparation" id="preparation"></textarea>
+            </div> --}}
+             <p class="for-label">
+            <label for="preparation">Начин на приготвяне*</label>
             </p>
+            <div class="row form-group">
+                <input name="preparation" type="hidden" id="preparation">
+                <div id="editor-container">
+                    <p></p>
+                </div>
+            </div>
             <p class="field category">
                 <select name="category" id="category">
                     <option value="Закускa">Закускa</option>

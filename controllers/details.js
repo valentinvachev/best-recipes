@@ -22,13 +22,13 @@ export async function getRequestDetails(context) {
 
         let templateObject = Object.assign({}, user, recipe);
         templateObject.comments = comments;
-        console.log(templateObject);
+ 
         this.partials = {
             header: await this.load("./templates/header-footer/header.hbs"),
             footer: await this.load("./templates/header-footer/footer.hbs"),
-            product: await this.load("./templates/details-product/product.hbs"),
+            products: await this.load("./templates/details-product/product.hbs"),
             addRecipe: await this.load("./templates/add-recipe.hbs"),
-            preparationStage: await this.load("./templates/details-product/preparation-stage.hbs"),
+            preparation: await this.load("./templates/details-product/preparation-stage.hbs"),
             comment: await this.load("./templates/details-product/comment.hbs"),
         }
 

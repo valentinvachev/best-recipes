@@ -29,17 +29,15 @@
         <div id="products-cooking">
             <h3>Необходими продукти:</h3>
             <ul>
-                {{#each products}}
-                {{> product}}
-                {{/each}}
+                {{!-- {{#each products}} --}}
+                {{> products}}
+                {{!-- {{/each}} --}}
             </ul>
         </div>
     </section>
     <section class="info-details preparation-info">
         <h3>Начин на приготвяне:</h3>
-        {{#each preparation}}
-        {{> preparationStage}}
-        {{/each}}
+        {{> preparation}}
         {{!-- <p>{{preparation}}</p> --}}
     </section>
     {{!-- <section id="main-chef" class="left" data-id="{{idUser}}">
