@@ -143,6 +143,7 @@ button.password-profile {
 }
 
 @media only screen and (max-width: 1400px) {
+    
 
     #root>div>section.info-details-profile #image-profile {
         width: 100%;
@@ -171,6 +172,18 @@ button.password-profile {
     #root>div>section.info-details-profile * {
         width: 80%;
     }
+
+    #root>div>section.info-details-profile button#btn-upload-profile {
+        width: 20rem;
+        max-width: 90%;
+    }
+
+    #root>div>section.info-details-profile input#image-profile {
+        width: 100%;
+        max-width: none;
+    }
+
+
     #root section.info-details-profile img {
         width: auto;
     }

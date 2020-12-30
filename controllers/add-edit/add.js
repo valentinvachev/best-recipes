@@ -7,7 +7,7 @@ export async function getRequestAdd(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         this.partials = {
             header: await this.load("./templates/header-footer/header.hbs"),
@@ -17,7 +17,7 @@ export async function getRequestAdd(context) {
         this.partial("./templates/add-edit/add.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
 
@@ -45,6 +45,8 @@ export async function getRequestAdd(context) {
         imageInput.addEventListener("change", () => {
             if (imageInput.files[0]) {
                 buttonUpload.textContent = imageInput.files[0].name;
+            } else {
+                buttonUpload.textContent = "Прикачи файл";
             }
             buttonUpload.appendChild(imageInput);
         })

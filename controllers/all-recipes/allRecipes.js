@@ -6,7 +6,7 @@ export async function getRequestAllRecipes(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let allRecipesDB = await getAllRecipes();
         let recipesDB = [];
@@ -32,7 +32,7 @@ export async function getRequestAllRecipes(context) {
         this.partial("./templates/all-recipes/all-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
 
