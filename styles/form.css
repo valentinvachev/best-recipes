@@ -1,3 +1,100 @@
+
+div.form-group {
+    width: 95.5%;
+    max-width: 700px;
+    margin: auto;
+    /* min-width: 20vw; */
+    /* min-height: 8rem; */
+    /* border: 0.2rem solid rgb(151, 150, 150);  */
+    border-radius: 0.5rem;
+    border-color: lightgrey; 
+    border-style: solid;
+}
+
+div.ql-editor {
+    min-height: 5rem;    
+}
+
+form div.form-group div {
+ background-color: rgb(226, 226, 226);
+ color: black;
+ margin: 0;
+ width: 100%;
+ overflow: hidden;
+}
+
+.ql-snow .ql-tooltip[data-mode=link]::before {
+    content: "Въведете връзка:";
+}
+
+.ql-snow .ql-tooltip {
+    position: static;
+    background-color: inherit;
+    border-color: black;
+    margin-bottom: 1rem;
+}
+
+#editor-container > div.ql-tooltip.ql-editing {
+    position: static;
+    background-color: inherit;
+    border-color: black;
+    margin-bottom: 1rem;
+}
+
+.ql-snow .ql-tooltip a {
+    width: 8rem;
+    margin: 0.5rem;
+    text-align: center;
+    color: black;
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+    border-right: 0px;
+    content: 'Промени';
+    padding-right: 0px;
+    color: black;
+    margin: auto;
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+    border-right: 1px solid #ccc;
+    content: 'Промени';
+    margin-left: 16px;
+    padding-right: 8px;
+}
+
+.ql-snow .ql-tooltip a.ql-remove::before {
+    content: 'Премахни';
+    margin-left: 8px;
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action:hover {
+    color: white;
+}
+
+
+div.ql-editor a {
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0.2rem;
+    font-size: 13px;
+    color: white;
+    background-color: teal;
+    max-width: 400px;
+}
+
+.ql-snow .ql-tooltip::before {
+    display: none;
+    content: "Посети връзка:";
+    line-height: 26px;
+    margin-right: 8px;
+}
+
+.ql-snow .ql-tooltip a.ql-preview {
+    display: none;
+}
+
 div.container {
     background-color: rgba(7, 7, 7, 0.575);
     color: white;
@@ -19,6 +116,8 @@ form fieldset {
     border-color: rgba(3, 3, 3, 1);
     /* padding-bottom: 4rem; */
 }
+
+
 
 form p.field {
     margin: 1.5rem 1rem;
@@ -59,7 +158,16 @@ form p.field {
     order: 1;
     text-align: left;
     margin-bottom: 0.1rem;
+    
 }
+
+form p.for-label > label {
+    margin-bottom: 0.1rem;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+}
+
 
 select {
     order: 2;
@@ -89,6 +197,15 @@ span a {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    div.form-group {
+        max-width: 500px;
+    }
+    
+}
+
+
+
 @media only screen and (max-width: 800px) {
     p.field {
         text-align: center;
@@ -101,5 +218,22 @@ span a {
     p.field span {
         text-align: center;
         margin: auto;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    div.form-group {
+        max-width: 350px;
+    }
+
+    .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+        margin: 0;
+        height: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    div.form-group {
+        max-width: 250px;
     }
 }
