@@ -40,6 +40,8 @@ export async function getRequestProfile(context) {
                 buttonUpload.textContent = imageInput.files[0].name;
             }
             buttonUpload.appendChild(imageInput);
+            console.log(buttonUpload);
+            console.log(imageInput);
         })
 
         button.addEventListener("click", async (e) => {
@@ -60,10 +62,20 @@ export async function getRequestProfile(context) {
                     image.src = photoUrl;
                     // document.getElementById('image-profile').value = "";
                     buttonUpload.textContent = "Прикачи файл";
+                    console.log(buttonUpload.querySelector("#image-profile"));
+                    if (!buttonUpload.querySelector("#image-profile")) {
+                        buttonUpload.appendChild(imageInput);
+                    }
+
                     waitingButton(button, "Зареждане...", "Смени");
                 } catch (e) {
                     waitingButton(button, "Зареждане...", "Смени");
                     buttonUpload.textContent = "Прикачи файл";
+
+                    if (!buttonUpload.querySelector("#image-profile")) {
+                        buttonUpload.appendChild(imageInput);
+                    }
+
                     console.log(e.message);
                 }
                 
