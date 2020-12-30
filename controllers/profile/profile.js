@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { updateProfilePicture, deleteUserFunction, changePasswordFunction } from "../../utils/data.js"
-import { searchFilterHeader, domainName } from "../../utils/itemUtil.js"
+import { searchFilterHeader, waitingButton } from "../../utils/itemUtil.js"
 
 export async function getRequestProfile(context) {
 
@@ -25,40 +25,55 @@ export async function getRequestProfile(context) {
 
         searchFilterHeader(context);
 
+
+
         const button = document.getElementById("change-picture");
         const buttonDelete = document.getElementById("delete-profile");
         const changePassword = document.getElementsByClassName("action-profile")[0];
         const saveChanges = document.getElementsByClassName("action-profile")[2];
+        let imageInput = document.getElementById("image-profile");
+        let buttonUpload = document.getElementById("btn-upload-profile");
 
-        button.addEventListener("click", async(e) => {
+        imageInput.addEventListener("change", () => {
+            console.log("change");
+            if (imageInput.files[0]) {
+                buttonUpload.textContent = imageInput.files[0].name;
+            }
+            buttonUpload.appendChild(imageInput);
+        })
+
+        button.addEventListener("click", async (e) => {
 
             const file = document.getElementById('image-profile').files[0];
 
             if (file) {
-                button.disabled = true;
+                waitingButton(button, "Зареждане...", "Смени");
                 let fileName = file.name + Math.random();
                 let storageRef = storage.ref('photos/' + fileName);
                 let task = await storageRef.put(file);
                 let photoUrl = await storageRef.getDownloadURL();
 
                 try {
-
                     await updateProfilePicture(photoUrl);
 
                     const image = document.getElementsByTagName("img")[1];
                     image.src = photoUrl;
-                    document.getElementById('image-profile').value = "";
-
+                    // document.getElementById('image-profile').value = "";
+                    buttonUpload.textContent = "Прикачи файл";
+                    waitingButton(button, "Зареждане...", "Смени");
                 } catch (e) {
-
+                    waitingButton(button, "Зареждане...", "Смени");
+                    buttonUpload.textContent = "Прикачи файл";
+                    console.log(e.message);
                 }
+                
             }
-
-            button.disabled = false;
         });
 
-        buttonDelete.addEventListener("click", async(e) => {
+        buttonDelete.addEventListener("click", async (e) => {
+            waitingButton(buttonDelete, "Зареждане...", "Изтриий профила");
             await deleteUserFunction();
+            waitingButton(buttonDelete, "Зареждане...", "Изтриий профила");
             // localStorage.removeItem("auth");
             context.redirect("/login");
         });
@@ -67,10 +82,10 @@ export async function getRequestProfile(context) {
             Array.from(document.getElementsByClassName("password-profile"))
                 .forEach(e => e.style.display = "inline-block");
 
-            changePassword.disabled = true;
+                waitingButton(changePassword, "Смени паролата", "Смени паролата");
         });
 
-        saveChanges.addEventListener("click", async(e) => {
+        saveChanges.addEventListener("click", async (e) => {
             let password = document.getElementById("password");
             let repeatPassword = document.getElementById("repeatPassword");
 
@@ -81,10 +96,10 @@ export async function getRequestProfile(context) {
             } else {
 
                 try {
-                    saveChanges.disabled = true;
+                    waitingButton(saveChanges, "Зареждане...", "Запази промените");
                     let data = await changePasswordFunction(password.value);
-                    saveChanges.disabled = false;
-                    changePassword.disabled = false;
+                    waitingButton(saveChanges, "Зареждане...", "Запази промените");
+                    waitingButton(changePassword, "Смени паролата", "Смени паролата");
                     Array.from(document.getElementsByClassName("password-profile"))
                         .forEach(e => e.style.display = "none");
 

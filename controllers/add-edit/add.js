@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, addTextEditor } from "../../utils/itemUtil.js"
 import { addRecipe } from "../../utils/data.js"
 
 export async function getRequestAdd(context) {
@@ -24,32 +24,9 @@ export async function getRequestAdd(context) {
     function manageEvents() {
         searchFilterHeader(context);
 
-        var quill = new Quill('#editor-container', {
-            modules: {
-                toolbar: [
-                    ['bold', 'italic'],
-                    ['link'],
-                    [{ list: 'ordered' }, { list: 'bullet' }]
-                ]
-            },
-            placeholder: '',
-            theme: 'snow'
-        });
+        addTextEditor('#editor-container')
+        addTextEditor('#products-editor-container');
 
-        var quill = new Quill('#products-editor-container', {
-            modules: {
-                toolbar: [
-                    ['bold', 'italic'],
-                    ['link'],
-                    [{ list: 'ordered' }, { list: 'bullet' }]
-                ]
-            },
-            placeholder: '',
-            theme: 'snow'
-        });
-
-
-      
         let button = document.querySelector("button.btn.submit");
         button.addEventListener("click", () => {
             let paragraph = document.getElementsByClassName("ql-editor")[1];
@@ -59,6 +36,17 @@ export async function getRequestAdd(context) {
             let paragraphProducts = document.getElementsByClassName("ql-editor")[0];
             let products = document.querySelector("#products");
             products.value = paragraphProducts.innerHTML;
+        })
+
+
+        let imageInput = document.getElementById("image");
+        let buttonUpload = document.getElementById("btn-upload");
+
+        imageInput.addEventListener("change", () => {
+            if (imageInput.files[0]) {
+                buttonUpload.textContent = imageInput.files[0].name;
+            }
+            buttonUpload.appendChild(imageInput);
         })
     }
 }
@@ -96,7 +84,7 @@ export async function postRequestAdd(context) {
 
 
         try {
-            waitingButton(document.querySelector("button.btn.submit"), "Моля изчакайте...", "Публикувай");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
 
             let file = document.getElementById("image").files[0];
             let fileName = file.name + Math.random();
@@ -110,7 +98,7 @@ export async function postRequestAdd(context) {
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Публикувай");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
         }
 
     }

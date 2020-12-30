@@ -121,9 +121,19 @@ function addId(recipe, id) {
 }
 
 
-export function transformProductsAndPreparation(objectToTransform) {
-    objectToTransform.products = objectToTransform.products.join("\n");
-    objectToTransform.preparation = objectToTransform.preparation.join("\n");
+export function addTextEditor(querySelector) {
+    new Quill(`${querySelector}`, {
+        modules: {
+            toolbar: [
+                ['bold', 'italic'],
+                ['link'],
+                [{ list: 'ordered' }, { list: 'bullet' }]
+            ]
+        },
+        placeholder: '',
+        theme: 'snow'
+    });
+
 }
 
 export function findTimeAndPortions(recipe) {
@@ -210,6 +220,17 @@ export function waitingButton(element, textWaiting, textDefault) {
         element.textContent = textDefault;
     } else {
         element.disabled = true;
+        element.textContent = textWaiting;
+    }
+}
+
+export function waitingAnchor(element, textWaiting, textDefault) {
+
+    if (element.classList.contains("disabled-a")) {
+        element.textContent = textDefault;
+        element.classList.remove("disabled-a");
+    } else {
+        element.classList.add("disabled-a");
         element.textContent = textWaiting;
     }
 }

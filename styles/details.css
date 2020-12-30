@@ -553,7 +553,7 @@
         top: 4rem;
         right: 4.5em;
         color: black;
-        padding: 0.7rem;
+        /* padding: 0.7rem; */
         width: 12rem;
     }
 
@@ -598,10 +598,11 @@
         color: white;
     }
 
-    #delete-recipe:disabled {
+    a#delete-recipe.disabled-a  {
+        background-color: #868686;
+        cursor: wait;
         color: white;
     }
-
     /* #delete-recipe:active {
     background-color: #bb352c;
     box-shadow: 0 2px #666;
@@ -687,6 +688,10 @@
         div#pagination span {
             display: none;
         }
+
+        #picture-holder {
+            text-align: center;
+        }
     }
 
     @media only screen and (max-width: 700px) {
@@ -695,7 +700,7 @@
         }
 
         button#publish-comment {
-            width: 8rem;
+            width: 8.2rem;
             /* font-size: 3vw;
             margin-right: 8%; */
         }
@@ -723,7 +728,7 @@
 
         
         button#publish-comment {
-            width: 7rem;
+            width: 7.2rem;
             /* font-size: 3vw;
             margin-right: 8%; */
         }

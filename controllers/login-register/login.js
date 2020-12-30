@@ -31,7 +31,7 @@ export async function postRequestLogin(context) {
 
         try {
 
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Влез");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Влез");
             let data = await loginUser(email, password);
             let auth = { idToken: data.idToken, refreshToken: data.refreshToken };
             localStorage.setItem("auth", JSON.stringify(auth));
@@ -40,7 +40,7 @@ export async function postRequestLogin(context) {
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Влез");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Влез");
         }
 
 

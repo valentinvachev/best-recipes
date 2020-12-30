@@ -5,6 +5,7 @@ import { domainName } from "./itemUtil.js"
 export async function getUser() {
 
     let user = null;
+    console.log(JSON.parse(localStorage.getItem("auth")));
 
     if (localStorage.getItem("auth")) {
         user = await getUserDataFunction();

@@ -64,9 +64,9 @@ export async function getRequestDetails(context) {
                 let newRating = sumRatings / timesRated;
                 const id = context.params.id;
 
-                waitingButton(ratingButton, "Моля изчакайте...", "Дайте своята оценка");
+                waitingButton(ratingButton, "Зареждане...", "Дайте своята оценка");
                 await updateRecipeRating(id, newRating, recipe.peopleRated, timesRated);
-                waitingButton(ratingButton, "Моля изчакайте...", "Дайте своята оценка");
+                waitingButton(ratingButton, "Зареждане...", "Дайте своята оценка");
                 document.getElementById("voting").style.display = "none";
                 document.getElementById("already-voted").style.display = "block";
             })
@@ -111,11 +111,11 @@ export async function getRequestDetails(context) {
                         const id = context.params.id;
                         const number = context.params.number;
 
-                        waitingButton(e.target, "Моля изчакайте...", "Публикувай");
+                        waitingButton(e.target, "Зареждане...", "Публикувай");
 
                         await updateRecipe(id, comments);
 
-                        waitingButton(e.target, "Моля изчакайте...", "Публикувай");
+                        waitingButton(e.target, "Зареждане...", "Публикувай");
                         setTimeout(() => redirect(`#/recipe/${id}/comments/page/${number}`), 0);
 
                     }
@@ -135,12 +135,12 @@ export async function getRequestDetails(context) {
                     const id = context.params.id;
                     const number = context.params.number;
 
-                    waitingButton(e.target, "", "");
+                    waitingButton(document.getElementById("delete-comment"), "", "");
                     await updateRecipe(id, comments);
 
                     setTimeout(() => redirect(`#/recipe/${id}/comments/page/1/published`), 1000);
                     setTimeout(() => redirect(`#/recipe/${id}/comments/page/1`), 1000);
-                    waitingButton(e.target, "", "");
+                    setTimeout(() => waitingButton(document.getElementById("delete-comment"), "", ""),1100);
                 }
 
             }
@@ -158,14 +158,14 @@ export async function getRequestDetails(context) {
 
                 const id = context.params.id;
 
-                waitingButton(buttonPublish, "Моля изчакайте...", "Публикувай");
+                waitingButton(buttonPublish, "Зареждане...", "Публикувай");
                 area.value = "";
 
                 await updateRecipe(id, comments);
 
                 setTimeout(() => redirect(`#/recipe/${id}/comments/page/1/published`), 1000);
                 setTimeout(() => redirect(`#/recipe/${id}/comments/page/1`), 1000);
-                setTimeout(() => waitingButton(buttonPublish, "Моля изчакайте...", "Публикувай"), 1000);
+                setTimeout(() => waitingButton(buttonPublish, "Зареждане...", "Публикувай"), 1000);
             }
         })
 
