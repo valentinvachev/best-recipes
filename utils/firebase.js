@@ -35,6 +35,10 @@ export function changePassword() {
     return `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${getApiKey()}`;
 }
 
+export function checkIdValidity() {
+    return `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${getApiKey()}`;
+}
+
 export async function getToken() {
 
     let user = JSON.parse(localStorage.getItem("auth"));
@@ -49,10 +53,10 @@ export async function getToken() {
     })
 
     let data = await response.json();
-    if (data.error) {
-        console.log(data.error);
-        window.history.pushState({}, '', `#/logout`);
-    }
+    // if (data.error) {
+    //     console.log(data.error);
+    //     window.history.pushState({}, '', `#/logout`);
+    // }
     return data.access_token;
 }
 

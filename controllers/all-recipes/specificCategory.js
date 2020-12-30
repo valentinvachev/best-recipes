@@ -6,7 +6,7 @@ export async function getRequestCategory(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let allRecipesDB = await getAllRecipes();
         let recipesDB = [];
@@ -34,7 +34,7 @@ export async function getRequestCategory(context) {
         this.partial("./templates/all-recipes/specific-category.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
     function manageEvents() {

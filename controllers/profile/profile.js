@@ -7,7 +7,7 @@ export async function getRequestProfile(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         this.partials = {
             header: await this.load("./templates/header-footer/header.hbs"),
@@ -17,7 +17,7 @@ export async function getRequestProfile(context) {
         this.partial("./templates/profile/profile.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
     function manageEvents() {
@@ -38,10 +38,10 @@ export async function getRequestProfile(context) {
             console.log("change");
             if (imageInput.files[0]) {
                 buttonUpload.textContent = imageInput.files[0].name;
+            } else {
+                buttonUpload.textContent = "Прикачи файл";
             }
             buttonUpload.appendChild(imageInput);
-            console.log(buttonUpload);
-            console.log(imageInput);
         })
 
         button.addEventListener("click", async (e) => {

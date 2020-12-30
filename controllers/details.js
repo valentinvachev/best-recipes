@@ -10,7 +10,7 @@ export async function getRequestDetails(context) {
 
     let redirect = this.redirect.bind(this);
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         recipe = await getSpecificRecipe(context.params.id);
         manageComments(recipe);
@@ -35,7 +35,7 @@ export async function getRequestDetails(context) {
         this.partial("./templates/details-product/details.hbs", templateObject, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
 

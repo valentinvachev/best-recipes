@@ -1,5 +1,6 @@
 export async function getRequestLogout() {
-
-    localStorage.removeItem("auth");
+    if (localStorage.auth) {
+        localStorage.removeItem("auth");
+    }
     this.redirect("#/login");
 }

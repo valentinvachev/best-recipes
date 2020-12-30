@@ -6,7 +6,7 @@ export async function getRequestSearchedNameRecipes(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let allRecipesDB = await getAllRecipes();
         let query = context.params.query;
@@ -33,7 +33,7 @@ export async function getRequestSearchedNameRecipes(context) {
         this.partial("./templates/all-recipes/search-page.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
 

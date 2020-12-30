@@ -6,7 +6,7 @@ export async function getRequestChef(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let allRecipesDB = await getAllRecipes();
         let recipesDB = [];
@@ -37,7 +37,7 @@ export async function getRequestChef(context) {
         this.partial("./templates/chef-recipes/chef-recipes.hbs", user, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
     function manageEvents() {

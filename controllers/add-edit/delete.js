@@ -6,7 +6,7 @@ export async function postRequestDelete(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let id = context.params.id;
         waitingAnchor(document.getElementById("delete-recipe"), "Зареждане...", "Изтрий рецептата");
@@ -15,6 +15,6 @@ export async function postRequestDelete(context) {
         waitingAnchor(document.getElementById("delete-recipe"), "Зареждане...", "Изтрий рецептата");
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 }

@@ -92,10 +92,10 @@ export async function getUserDataFunction() {
     });
 
     let data = await response.json();
-    if (data.error) {
-        console.log(data.error);
-        window.history.pushState({}, '', `#/logout`);
-    }
+    // if (data.error) {
+    //     console.log(data.error);
+    //     window.history.pushState({}, '', `#/logout`);
+    // }
     return data.users[0];
 }
 
@@ -125,8 +125,26 @@ export async function changePasswordFunction(password) {
 
 
     let data = await response.json();
-    console.log(data);
     return data;
+}
+
+export async function checkIdTokenValidity() {
+    let idToken = await databaseManager.getToken();
+
+    let response = await fetch(`${databaseManager.changePassword()}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ idToken, returnSecureToken: true })
+    });
+
+    let data = await response.json();
+    // data.error = {message:"invalid"};
+    if(data.error) {
+        return false;
+    }
+    return true;
 }
 
 

@@ -7,7 +7,7 @@ export async function getRequestEdit(context) {
 
     let user = await getUser();
 
-    if (user.loggedIn) {
+    if (user.loggedIn && user.validToken) {
 
         let id = context.params.id;
         let recipe = await getSpecificRecipe(id);
@@ -25,7 +25,7 @@ export async function getRequestEdit(context) {
         this.partial("./templates/add-edit/edit.hbs", templateObject, manageEvents);
 
     } else {
-        this.redirect("#/login");
+        this.redirect("#/logout");
     }
 
     function manageEvents() {
@@ -51,6 +51,8 @@ export async function getRequestEdit(context) {
         imageInput.addEventListener("change", () => {
             if (imageInput.files[0]) {
                 buttonUpload.textContent = imageInput.files[0].name;
+            } else {
+                buttonUpload.textContent = "Прикачи файл";
             }
             buttonUpload.appendChild(imageInput);
         })
