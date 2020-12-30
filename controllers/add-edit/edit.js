@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { editRecipe, getSpecificRecipe } from "../../utils/data.js"
-import { transformProductsAndPreparation, waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
+import {waitingButton, searchFilterHeader, addTextEditor } from "../../utils/itemUtil.js"
 
 export async function getRequestEdit(context) {
 
@@ -13,7 +13,6 @@ export async function getRequestEdit(context) {
         let recipe = await getSpecificRecipe(id);
 
         let templateObject = Object.assign({}, user, recipe);
-        // transformProductsAndPreparation(templateObject);
         templateObject.id = id;
 
         this.partials = {
@@ -32,31 +31,8 @@ export async function getRequestEdit(context) {
     function manageEvents() {
         searchFilterHeader(context);
 
-        var quill = new Quill('#editor-container', {
-            modules: {
-                toolbar: [
-                    ['bold', 'italic'],
-                    ['link'],
-                    [{ list: 'ordered' }, { list: 'bullet' }]
-                ]
-            },
-            placeholder: '',
-            theme: 'snow'
-        });
-
-        var quill = new Quill('#products-editor-container', {
-            modules: {
-                toolbar: [
-                    ['bold', 'italic'],
-                    ['link'],
-                    [{ list: 'ordered' }, { list: 'bullet' }]
-                ]
-            },
-            placeholder: '',
-            theme: 'snow'
-        });
-
-
+        addTextEditor('#editor-container')
+        addTextEditor('#products-editor-container');
       
         let button = document.querySelector("button.btn.submit");
         button.addEventListener("click", () => {
@@ -67,6 +43,16 @@ export async function getRequestEdit(context) {
             let paragraphProducts = document.getElementsByClassName("ql-editor")[0];
             let products = document.querySelector("#products");
             products.value = paragraphProducts.innerHTML;
+        })
+
+        let imageInput = document.getElementById("image");
+        let buttonUpload = document.getElementById("btn-upload");
+
+        imageInput.addEventListener("change", () => {
+            if (imageInput.files[0]) {
+                buttonUpload.textContent = imageInput.files[0].name;
+            }
+            buttonUpload.appendChild(imageInput);
         })
     }
 }
@@ -95,7 +81,7 @@ export async function postRequestEdit(context) {
         let recipeToPatch = { name, time, portions, products, preparation, category, id };
 
         try {
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Публикувай");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
             if (image !== undefined) {
                 let file = document.getElementById("image").files[0];
                 let fileName = file.name + Math.random();
@@ -110,7 +96,7 @@ export async function postRequestEdit(context) {
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Публикувай");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
         }
 
     }

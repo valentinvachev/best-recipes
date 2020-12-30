@@ -29,13 +29,13 @@ export async function postRequestReset(context) {
 
         try {
 
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Заяви нова парола");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Заяви нова парола");
             let data = await resetPassword(email);
             this.redirect("#/login");
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);
-            waitingButton(document.getElementsByTagName("button")[0], "Моля изчакайте...", "Заяви нова парола");
+            waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Заяви нова парола");
         }
 
 

@@ -64,7 +64,7 @@
         border-style: solid;
         border-radius: 1em;
         border-width: 0.1em;
-        width: 90%;
+        /* width: 90%; */
         max-width: 100%;
         padding: 0.3rem;
     }

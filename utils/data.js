@@ -92,7 +92,10 @@ export async function getUserDataFunction() {
     });
 
     let data = await response.json();
-
+    if (data.error) {
+        console.log(data.error);
+        window.history.pushState({}, '', `#/logout`);
+    }
     return data.users[0];
 }
 

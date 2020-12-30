@@ -10,6 +10,8 @@
 /* @import "./recipe.css"; */
 @import "./recipe-test.css";
 @import "./dashboard.css";
+@import "./quilljs-custom.css";
+
 html {
     background: #ffffff url("../pictures/foodshot2Charlie.jpg") no-repeat fixed center;
     position: relative;
@@ -54,6 +56,13 @@ a:active {
 a:disabled {
     background-color: #868686;
     cursor: wait;
+}
+
+a.disabled-a {
+    background-color: #868686;
+    cursor: wait;
+    color: white;
+    font-weight: bolder;
 }
 
 button {
@@ -150,6 +159,7 @@ input {
     margin: 6rem auto;
     width: 1400px;
 }
+
 
 
 /* COMMON */

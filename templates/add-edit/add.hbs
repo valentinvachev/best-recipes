@@ -20,8 +20,8 @@
                 <label for="products">Добави продукт: * <span>(по един продукт на ред)</span></label>
             </p> --}}
             <p class="for-label">
-             <label for="products">Добави продукт: * (по един продукт на ред)</label>
-             </p>
+                <label for="products">Добави продукт: * (по един продукт на ред)</label>
+            </p>
             <div class="row form-group">
                 <input name="products" type="hidden" id="products">
                 <div id="products-editor-container">
@@ -38,8 +38,8 @@
             <div id="editor-container" style="background-color: white; color: black">
                 <textarea name="preparation" id="preparation"></textarea>
             </div> --}}
-             <p class="for-label">
-            <label for="preparation">Начин на приготвяне*</label>
+            <p class="for-label">
+                <label for="preparation">Начин на приготвяне: *</label>
             </p>
             <div class="row form-group">
                 <input name="preparation" type="hidden" id="preparation">
@@ -60,8 +60,11 @@
                 <label for="category">Категория: *</label>
             </p>
             <p class="field image">
-                <input type="file" id="image" name="image">
                 <label for="image">Снимка: *</label>
+                <button id="btn-upload" type="button">
+                    Прикачи файл
+                    <input type="file" id="image" name="image">
+                </button>
             </p>
             <p class="field submit">
                 <button class="btn submit" type="submit">Публикувай</button>
