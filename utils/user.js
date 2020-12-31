@@ -7,8 +7,7 @@ export async function getUser() {
     let user = {};
     // console.log(JSON.parse(localStorage.getItem("auth")));
 
-    if (localStorage.getItem("auth")) {
-
+    if (localStorage.getItem("auth") && await checkIdTokenValidity()) {
             user = await getUserDataFunction();
             user.validToken = true;
             user.loggedIn = true;

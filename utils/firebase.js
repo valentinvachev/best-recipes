@@ -53,10 +53,6 @@ export async function getToken() {
     })
 
     let data = await response.json();
-    // if (data.error) {
-    //     console.log(data.error);
-    //     window.history.pushState({}, '', `#/logout`);
-    // }
     return data.access_token;
 }
 
