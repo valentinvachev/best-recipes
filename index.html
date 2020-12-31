@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="icon" href="pictures/pngwing.com.png">
   
-    <title>Recipes</title>
+    <title>Сготви си</title>
 </head>
 
 <body>
@@ -28,15 +28,13 @@
     <script src="node_modules/sammy/lib/sammy.js"></script>
     <script src="node_modules/sammy/lib/plugins/sammy.handlebars.js"></script> -->
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyD9nt5UG8oqjMAH3zAqIDl7hJCCgxc1fRw",
             authDomain: "recipeproject-f0551.firebaseapp.com",
             databaseURL: "https://recipeproject-f0551-default-rtdb.firebaseio.com",
@@ -47,7 +45,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var storage = firebase.storage();
+        const storage = firebase.storage();
     </script>
 
     <script src="./app.js" type="module"></script>

@@ -12,6 +12,7 @@
 
 #btn-upload:hover {
     font-weight: bolder;
+    cursor: default;
 }
 
 #image {
