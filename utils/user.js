@@ -8,10 +8,15 @@ export async function getUser() {
 
     if (localStorage.getItem("auth")) {
         // && await checkIdTokenValidity()
+            try {
             user = await getUserDataFunction();
             user.validToken = true;
             user.loggedIn = true;
             user.username = getUsername(user);
+            } catch (e) {
+                user.validToken = false;
+                console.log(e.message);
+            }
         
     } else {
         user = { loggedIn: false }
