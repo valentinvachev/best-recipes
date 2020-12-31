@@ -309,6 +309,7 @@ nav.navbar a:hover {
     }
     div.content h2 {
         width: 100%;
+        margin-top: 2rem;
         font-size: min (1rem, 6vw);
     }
     section.article {
