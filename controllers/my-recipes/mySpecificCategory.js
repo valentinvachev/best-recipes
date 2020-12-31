@@ -2,6 +2,7 @@ import { getUser } from "../../utils/user.js"
 import { getAllRecipes } from "../../utils/data.js"
 import {
     determinePages,
+    filterRecipesByOwner,
     filterRecipesByCategoryAndOwner,
     translateCategory,
     gatherInfoRecipe,
@@ -23,6 +24,7 @@ export async function getRequestMyCategory(context) {
         let category = context.params.category;
 
         gatherInfoRecipe(allRecipesDB, recipesDB);
+        recipesDB = filterRecipesByOwner(recipesDB, user.email);
         findTotalPeopleVoted(recipesDB, user);
         recipesDB = filterRecipesByCategoryAndOwner(recipesDB, category, user.email);
         user.category = category
