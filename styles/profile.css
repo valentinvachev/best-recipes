@@ -1,9 +1,4 @@
 #btn-upload-profile {
-    width: 80%;
-}
-
-
-#btn-upload-profile {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -13,6 +8,12 @@
     z-index: 0;
     overflow: hidden;
 }
+
+#btn-upload-profile:hover {
+    font-weight: bolder;
+    cursor: default;
+}
+
 
 #image-profile {
     width: 100%;
@@ -24,6 +25,7 @@
     left: 0;
     z-index: 2;
 }
+
 
 .profile {
     margin: auto;
