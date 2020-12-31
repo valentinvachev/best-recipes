@@ -128,7 +128,7 @@ export async function changePasswordFunction(password) {
 export async function checkIdTokenValidity() {
     let idToken = await databaseManager.getToken();
 
-    let response = await fetch(`${databaseManager.changePassword()}`, {
+    let response = await fetch(`${databaseManager.checkIdValidity()}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
