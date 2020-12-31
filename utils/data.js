@@ -91,6 +91,9 @@ export async function getUserDataFunction() {
     });
 
     let data = await response.json();
+    if (data.error) {
+        throw new Error("Invalid tokens");
+    }
     return data.users[0];
 }
 
