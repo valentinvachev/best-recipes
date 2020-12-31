@@ -403,3 +403,21 @@ export function manageImageButton(imageInput,buttonUpload) {
     }
     buttonUpload.appendChild(imageInput);
 }
+
+export async function paramsOfCanvas(fileName,event) {
+    const canvas = document.createElement("canvas");
+    const MAX_WIDTH = 600;
+
+    const scaleSize = MAX_WIDTH / event.target.width;
+    canvas.width = MAX_WIDTH;
+    canvas.height = event.target.height * scaleSize;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(event.target, 0, 0, canvas.width, canvas.height);
+
+    const srcEncoded = ctx.canvas.toDataURL(event.target, "image/jpeg", 0.8);
+    let blob = await (await fetch(srcEncoded)).blob();
+
+    let fileToReturn = new File([blob], fileName, { lastModified: new Date().getTime(), type: blob.type });
+    return fileToReturn;
+}

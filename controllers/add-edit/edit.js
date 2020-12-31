@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { editRecipe, getSpecificRecipe } from "../../utils/data.js"
-import {waitingButton, searchFilterHeader, addTextEditor,manageImageButton } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, addTextEditor, manageImageButton,paramsOfCanvas } from "../../utils/itemUtil.js"
 
 export async function getRequestEdit(context) {
 
@@ -33,7 +33,7 @@ export async function getRequestEdit(context) {
 
         addTextEditor('#editor-container')
         addTextEditor('#products-editor-container');
-      
+
         let button = document.querySelector("button.btn.submit");
         button.addEventListener("click", () => {
             let paragraph = document.getElementsByClassName("ql-editor")[1];
@@ -49,7 +49,7 @@ export async function getRequestEdit(context) {
         let buttonUpload = document.getElementById("btn-upload");
 
         imageInput.addEventListener("change", () => {
-            manageImageButton(imageInput,buttonUpload);
+            manageImageButton(imageInput, buttonUpload);
         })
     }
 }
@@ -81,15 +81,30 @@ export async function postRequestEdit(context) {
             waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
             if (image !== undefined) {
                 let file = document.getElementById("image").files[0];
-                let fileName = file.name + Math.random();
-                let storageRef = storage.ref('photos/' + fileName);
-                await storageRef.put(file);
-                let urlImage = await storageRef.getDownloadURL();
-                recipeToPatch.urlImage = urlImage;
-            }
+                let newFile = null;
+                let urlImage = null;
 
-            let data = await editRecipe(recipeToPatch);
-            redirect(`#/recipe/${id}/comments/page/:number`);
+                const reader = new FileReader();
+                const redirect = this.redirect.bind(this);
+                reader.readAsDataURL(file);
+                reader.addEventListener("load", async (e) => {
+
+                    const imgElements = document.createElement("img");
+                    imgElements.src = e.target.result;
+                    imgElements.addEventListener("load", async (event) => {
+
+
+                        newFile = await paramsOfCanvas(file.name, event);
+                        let fileName = newFile.name + Math.random();
+                        let storageRef = storage.ref('photos/' + fileName);
+                        await storageRef.put(newFile);
+                        urlImage = await storageRef.getDownloadURL();
+                        recipeToPatch.urlImage = urlImage;
+                        let data = await editRecipe(recipeToPatch);
+                        redirect(`#/recipe/${id}/comments/page/:number`);
+                    })
+                })
+            }
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);

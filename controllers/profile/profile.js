@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { updateProfilePicture, deleteUserFunction, changePasswordFunction } from "../../utils/data.js"
-import { searchFilterHeader, waitingButton, manageImageButton } from "../../utils/itemUtil.js"
+import { searchFilterHeader, waitingButton, manageImageButton,paramsOfCanvas } from "../../utils/itemUtil.js"
 
 export async function getRequestProfile(context) {
 
@@ -43,25 +43,42 @@ export async function getRequestProfile(context) {
             const file = document.getElementById('image-profile').files[0];
 
             if (file) {
-                waitingButton(button, "Зареждане...", "Смени");
-                let fileName = file.name + Math.random();
-                let storageRef = storage.ref('photos/' + fileName);
-                let task = await storageRef.put(file);
-                let photoUrl = await storageRef.getDownloadURL();
-
                 try {
-                    await updateProfilePicture(photoUrl);
-
-                    const image = document.getElementsByTagName("img")[1];
-                    image.src = photoUrl;
-                    buttonUpload.textContent = "Прикачи снимка";
-
-                    console.log(buttonUpload.querySelector("#image-profile"));
-                    if (!buttonUpload.querySelector("#image-profile")) {
-                        buttonUpload.appendChild(imageInput);
-                    }
-
                     waitingButton(button, "Зареждане...", "Смени");
+
+                    let newFile = null;
+                    let photoUrl = null;
+
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.addEventListener("load", async (e) => {
+
+                        const imgElements = document.createElement("img");
+                        imgElements.src = e.target.result;
+                        imgElements.addEventListener("load", async (event) => {
+
+
+                            newFile = await paramsOfCanvas(file.name, event);
+                            let fileName = newFile.name + Math.random();
+                            let storageRef = storage.ref('photos/' + fileName);
+                            await storageRef.put(newFile);
+                            photoUrl = await storageRef.getDownloadURL();
+
+                            await updateProfilePicture(photoUrl);
+
+                            const image = document.getElementsByTagName("img")[1];
+                            image.src = photoUrl;
+                            buttonUpload.textContent = "Прикачи снимка";
+
+                            console.log(buttonUpload.querySelector("#image-profile"));
+                            if (!buttonUpload.querySelector("#image-profile")) {
+                                buttonUpload.appendChild(imageInput);
+                            }
+
+                            waitingButton(button, "Зареждане...", "Смени");
+                        })
+                    })
+
                 } catch (e) {
                     waitingButton(button, "Зареждане...", "Смени");
                     buttonUpload.textContent = "Прикачи снимка";
@@ -113,7 +130,7 @@ export async function getRequestProfile(context) {
                     localStorage.removeItem("auth");
                     user.idToken = data["idToken"];
                     user.refreshToken = data["refreshToken"];
-                    localStorage.setItem("auth", JSON.stringify(user));                   
+                    localStorage.setItem("auth", JSON.stringify(user));
                 } catch (e) {
                     console.log(e.message);
                 }
