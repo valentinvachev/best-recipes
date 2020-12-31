@@ -1,5 +1,5 @@
 import * as databaseManager from "./firebase.js"
-import {errorTranslator} from "../utils/itemUtil.js"
+import { errorTranslator } from "../utils/itemUtil.js"
 
 
 export async function getAllRecipes() {
@@ -92,11 +92,8 @@ export async function getUserDataFunction() {
     });
 
     let data = await response.json();
-    // if (data.error) {
-    //     console.log(data.error);
-    //     window.history.pushState({}, '', `#/logout`);
-    // }
     return data.users[0];
+
 }
 
 
@@ -140,15 +137,14 @@ export async function checkIdTokenValidity() {
     });
 
     let data = await response.json();
-    // data.error = {message:"invalid"};
-    if(data.error) {
+    if (data.error) {
         return false;
     }
     return true;
 }
 
 
-export async function registerUser(email, password,username) {
+export async function registerUser(email, password, username) {
 
     let response = await fetch(`${databaseManager.registerRESTApi()}${databaseManager.getApiKey()}`,
         {
@@ -170,7 +166,7 @@ export async function registerUser(email, password,username) {
 }
 
 
-export async function loginUser(email,password) {
+export async function loginUser(email, password) {
 
     let response = await fetch(`${databaseManager.loginRESTApi()}${databaseManager.getApiKey()}`, {
         method: "POST",
@@ -197,7 +193,7 @@ export async function resetPassword(email) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ requestType: "PASSWORD_RESET",email })
+        body: JSON.stringify({ requestType: "PASSWORD_RESET", email })
     });
 
     if (!response.ok) {
