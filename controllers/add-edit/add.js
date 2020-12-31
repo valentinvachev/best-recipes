@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader, addTextEditor,manageImageButton } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, addTextEditor, manageImageButton, paramsOfCanvas } from "../../utils/itemUtil.js"
 import { addRecipe } from "../../utils/data.js"
 
 export async function getRequestAdd(context) {
@@ -43,15 +43,13 @@ export async function getRequestAdd(context) {
         let buttonUpload = document.getElementById("btn-upload");
 
         imageInput.addEventListener("change", () => {
-            manageImageButton(imageInput,buttonUpload);
+            manageImageButton(imageInput, buttonUpload);
         })
     }
 }
 
 
 export async function postRequestAdd(context) {
-
-    console.log(this.params);
 
     let user = await getUser();
 
@@ -84,14 +82,29 @@ export async function postRequestAdd(context) {
             waitingButton(document.querySelector("button.btn.submit"), "Зареждане...", "Публикувай");
 
             let file = document.getElementById("image").files[0];
-            let fileName = file.name + Math.random();
-            let storageRef = storage.ref('photos/' + fileName);
-            await storageRef.put(file);
-            const urlImage = await storageRef.getDownloadURL();
+            let newFile = null;
+            let urlImage = null;
+
+            const reader = new FileReader();
+            const redirect = this.redirect.bind(this);
+            reader.readAsDataURL(file);
+            reader.addEventListener("load", async (e) => {
+
+                const imgElements = document.createElement("img");
+                imgElements.src = e.target.result;
+                imgElements.addEventListener("load", async (event) => {
 
 
-            await addRecipe(name, time, portions, products, preparation, category, creator, urlImage, rating, peopleRated, comments, dateAdded, timesRated, username, idUser);
-            this.redirect("#/home");
+                    newFile = await paramsOfCanvas(file.name, event);
+                    let fileName = newFile.name + Math.random();
+                    let storageRef = storage.ref('photos/' + fileName);
+                    await storageRef.put(newFile);
+                    urlImage = await storageRef.getDownloadURL();
+
+                    await addRecipe(name, time, portions, products, preparation, category, creator, urlImage, rating, peopleRated, comments, dateAdded, timesRated, username, idUser);
+                    redirect("#/home");
+                })
+            })
 
         } catch (e) {
             notificationManager.invalidInfo(`${e.message}`);
