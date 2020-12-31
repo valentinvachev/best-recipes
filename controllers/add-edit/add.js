@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
-import { waitingButton, searchFilterHeader, addTextEditor } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, addTextEditor,manageImageButton } from "../../utils/itemUtil.js"
 import { addRecipe } from "../../utils/data.js"
 
 export async function getRequestAdd(context) {
@@ -43,12 +43,7 @@ export async function getRequestAdd(context) {
         let buttonUpload = document.getElementById("btn-upload");
 
         imageInput.addEventListener("change", () => {
-            if (imageInput.files[0]) {
-                buttonUpload.textContent = imageInput.files[0].name;
-            } else {
-                buttonUpload.textContent = "Прикачи файл";
-            }
-            buttonUpload.appendChild(imageInput);
+            manageImageButton(imageInput,buttonUpload);
         })
     }
 }

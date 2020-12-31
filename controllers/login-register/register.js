@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { registerUser } from "../../utils/data.js"
-import { waitingButton, searchFilterHeader, domainName } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader } from "../../utils/itemUtil.js"
 
 export async function getRequestRegister(context) {
 

@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { updateProfilePicture, deleteUserFunction, changePasswordFunction } from "../../utils/data.js"
-import { searchFilterHeader, waitingButton } from "../../utils/itemUtil.js"
+import { searchFilterHeader, waitingButton, manageImageButton } from "../../utils/itemUtil.js"
 
 export async function getRequestProfile(context) {
 
@@ -35,13 +35,7 @@ export async function getRequestProfile(context) {
         let buttonUpload = document.getElementById("btn-upload-profile");
 
         imageInput.addEventListener("change", () => {
-            console.log("change");
-            if (imageInput.files[0]) {
-                buttonUpload.textContent = imageInput.files[0].name;
-            } else {
-                buttonUpload.textContent = "Прикачи файл";
-            }
-            buttonUpload.appendChild(imageInput);
+            manageImageButton(imageInput, buttonUpload);
         })
 
         button.addEventListener("click", async (e) => {
@@ -60,8 +54,8 @@ export async function getRequestProfile(context) {
 
                     const image = document.getElementsByTagName("img")[1];
                     image.src = photoUrl;
-                    // document.getElementById('image-profile').value = "";
-                    buttonUpload.textContent = "Прикачи файл";
+                    buttonUpload.textContent = "Прикачи снимка";
+
                     console.log(buttonUpload.querySelector("#image-profile"));
                     if (!buttonUpload.querySelector("#image-profile")) {
                         buttonUpload.appendChild(imageInput);
@@ -70,7 +64,7 @@ export async function getRequestProfile(context) {
                     waitingButton(button, "Зареждане...", "Смени");
                 } catch (e) {
                     waitingButton(button, "Зареждане...", "Смени");
-                    buttonUpload.textContent = "Прикачи файл";
+                    buttonUpload.textContent = "Прикачи снимка";
 
                     if (!buttonUpload.querySelector("#image-profile")) {
                         buttonUpload.appendChild(imageInput);
@@ -78,7 +72,7 @@ export async function getRequestProfile(context) {
 
                     console.log(e.message);
                 }
-                
+
             }
         });
 
@@ -86,15 +80,14 @@ export async function getRequestProfile(context) {
             waitingButton(buttonDelete, "Зареждане...", "Изтриий профила");
             await deleteUserFunction();
             waitingButton(buttonDelete, "Зареждане...", "Изтриий профила");
-            // localStorage.removeItem("auth");
-            context.redirect("/login");
+            context.redirect("#/logout");
         });
 
         changePassword.addEventListener("click", (e) => {
             Array.from(document.getElementsByClassName("password-profile"))
                 .forEach(e => e.style.display = "inline-block");
 
-                waitingButton(changePassword, "Смени паролата", "Смени паролата");
+            waitingButton(changePassword, "Смени паролата", "Смени паролата");
         });
 
         saveChanges.addEventListener("click", async (e) => {
@@ -115,12 +108,12 @@ export async function getRequestProfile(context) {
                     Array.from(document.getElementsByClassName("password-profile"))
                         .forEach(e => e.style.display = "none");
 
-
+                    console.log(data);
                     let user = JSON.parse(localStorage.getItem("auth"));
                     localStorage.removeItem("auth");
-                    user.idToken = data.idToken;
-                    user.refreshToken = data.refreshToken;
-                    localStorage.setItem("auth", JSON.stringify(user));
+                    user.idToken = data["idToken"];
+                    user.refreshToken = data["refreshToken"];
+                    localStorage.setItem("auth", JSON.stringify(user));                   
                 } catch (e) {
                     console.log(e.message);
                 }

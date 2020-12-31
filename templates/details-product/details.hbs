@@ -4,7 +4,6 @@
     <section id="timePortions">
         <h1>{{name}}</h1>
         <a class="tooltip" id="added-chef" href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">Добавено от <span>{{username}}</span><span class="tooltiptext">Вижте и другите рецепти на този готвач</span></a>
-        {{!-- <div id="added-chef" class="tooltip">Добавено от <span><a class="tooltiptext" href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">{{username}}</a></span></div> --}}
         <div>
             {{#if timeOne}}
             <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-f0551.appspot.com/o/fixed%2Frinr6RxbT.png?alt=media&token=fac8a3e8-6fe1-47e6-b0c4-35f1178d817d" alt="">1 минута
@@ -29,20 +28,14 @@
         <div id="products-cooking">
             <h3>Необходими продукти:</h3>
             <ul>
-                {{!-- {{#each products}} --}}
                 {{> products}}
-                {{!-- {{/each}} --}}
             </ul>
         </div>
     </section>
     <section class="info-details preparation-info">
         <h3>Начин на приготвяне:</h3>
         {{> preparation}}
-        {{!-- <p>{{preparation}}</p> --}}
     </section>
-    {{!-- <section id="main-chef" class="left" data-id="{{idUser}}">
-            <a href="{{domainName}}/#/recipes/chef/{{username}}/{{idUser}}/page/1">Други рецепти от този готвач</a>
-    </section> --}}
     <section class="actions" id="actions">
         {{#unless isCreator}}
         {{#unless isVoter}}

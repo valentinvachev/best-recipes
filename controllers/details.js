@@ -1,7 +1,7 @@
 import { getUser } from "../utils/user.js"
 import { getSpecificRecipe, updateRecipe, updateRecipeRating } from "../utils/data.js"
 import { manageComments, checkIfUserOwnRecipe as checkIUserRecipeRelationship, waitingButton, searchFilterHeader } from "../utils/itemUtil.js"
-import { determinePagesComments, domainName } from "../utils/itemUtil.js"
+import { determinePagesComments } from "../utils/itemUtil.js"
 
 export async function getRequestDetails(context) {
 

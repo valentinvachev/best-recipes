@@ -334,10 +334,8 @@ export function searchFilterHeader(context) {
             const query = searchingBox.value.toLocaleLowerCase();
 
             if (query.trim() === "") {
-                // window.history.pushState({}, '', `#/recipes/page/1`);
                 context.redirect(`#/recipes/page/1`);
             } else {
-                // window.history.pushState({}, '', `#/recipes/search/${query}/page/1`);
                 context.redirect(`#/recipes/search/${query}/page/1`);
             }
 
@@ -378,11 +376,6 @@ export function redirectSortingFunction(context) {
             urlBase = url.substring(start, url.lastIndexOf("/page"));
         }
 
-
-        // console.log(`/${urlBase}/sorted/${sorting}/page/1`);
-        // context.redirect(`/${urlBase}/sorted/${sorting}/page/1`);
-        // console.log(`${urlBase}/sorted/${sorting}/page/1`);
-        // console.log(`/${urlBase}/sorted/${sorting}/page/1`)
         context.redirect(`${urlBase}/sorted/${sorting}/page/1`);
     })
 }
@@ -398,4 +391,15 @@ export function domainName(user) {
         user.domainName = "/" + domainName;
         user.domainNameRecipe = domainNameRecipe;
     }
+}
+
+
+
+export function manageImageButton(imageInput,buttonUpload) {
+    if (imageInput.files[0]) {
+        buttonUpload.textContent = imageInput.files[0].name;
+    } else {
+        buttonUpload.textContent = "Прикачи снимка";
+    }
+    buttonUpload.appendChild(imageInput);
 }

@@ -1,6 +1,6 @@
 import { getUser } from "../../utils/user.js"
 import { getAllRecipes } from "../../utils/data.js"
-import { determinePages, gatherInfoRecipe, findTotalPeopleVoted, searchFilterHeader, redirectSortingFunction, sortRecipesByCriteria, filterRecipesByOwnerIdUser, domainName } from "../../utils/itemUtil.js"
+import { determinePages, gatherInfoRecipe, findTotalPeopleVoted, searchFilterHeader, redirectSortingFunction, sortRecipesByCriteria, filterRecipesByOwnerIdUser } from "../../utils/itemUtil.js"
 
 export async function getRequestChef(context) {
 
