@@ -73,7 +73,6 @@ export async function updateProfilePicture(photoUrl) {
 
     let data = await response.json();
 
-    console.log(data);
     return data;
 
 }
@@ -93,7 +92,6 @@ export async function getUserDataFunction() {
 
     let data = await response.json();
     return data.users[0];
-
 }
 
 

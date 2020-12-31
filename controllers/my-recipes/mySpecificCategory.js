@@ -9,7 +9,6 @@ import {
     searchFilterHeader,
     sortRecipesByCriteria,
     redirectSortingFunction,
-    domainName
 } from "../../utils/itemUtil.js"
 
 export async function getRequestMyCategory(context) {

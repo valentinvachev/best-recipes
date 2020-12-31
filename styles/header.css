@@ -103,9 +103,6 @@
         display: block;
     }
     
-    /* li #search-form {
-        width: 100%;
-    } */
     
     nav.nav-buttons li#search-form {
         margin: 0;
@@ -121,8 +118,6 @@
     #search-form input[type="submit"] {
         height: 1.5rem;
         width: 20%;
-        /* margin: 0; */
-        /* padding: 0; */
         border: 2px solid rgb(151, 150, 150);
         border-radius: 0.5em;
         padding: 0 0.5rem;

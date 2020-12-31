@@ -1,6 +1,6 @@
 import { deleteRecipe } from "../../utils/data.js"
 import { getUser } from "../../utils/user.js"
-import { waitingAnchor, domainName } from "../../utils/itemUtil.js"
+import { waitingAnchor } from "../../utils/itemUtil.js"
 
 export async function postRequestDelete(context) {
 

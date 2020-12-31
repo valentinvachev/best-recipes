@@ -3,9 +3,6 @@ div.form-group {
     width: 95.5%;
     max-width: 700px;
     margin: auto;
-    /* min-width: 20vw; */
-    /* min-height: 8rem; */
-    /* border: 0.2rem solid rgb(151, 150, 150);  */
     border-radius: 0.5rem;
     border-color: lightgrey; 
     border-style: solid;
@@ -60,14 +57,12 @@ form div.form-group div {
 .ql-snow .ql-tooltip a.ql-action::after {
     border-right: none;
     content: 'Промени';
-    /* margin-left: 16px; */
     padding-right: 0;
     margin-left: 0;
 }
 
 .ql-snow .ql-tooltip a.ql-remove::before {
     content: 'Премахни';
-    /* margin-left: 8px; */
 }
 
 .ql-snow .ql-tooltip a.ql-remove::before {

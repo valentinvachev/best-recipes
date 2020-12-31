@@ -53,6 +53,10 @@ export async function getToken() {
     })
 
     let data = await response.json();
+    localStorage.removeItem("auth");
+    user.idToken = data["id_token"];
+    user.refreshToken = data["refresh_token"];
+    localStorage.setItem("auth", JSON.stringify(user));
     return data.access_token;
 }
 
