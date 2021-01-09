@@ -84,7 +84,7 @@ export async function postRequestEdit(context) {
                 let newFile = null;
                 let urlImage = null;
 
-                console.log(image);
+                // console.log(image);
 
                 const reader = new FileReader();
                 const redirect = this.redirect.bind(this);
@@ -102,7 +102,7 @@ export async function postRequestEdit(context) {
                         await storageRef.put(newFile);
                         urlImage = await storageRef.getDownloadURL();
 
-                        console.log(urlImage);
+                        // console.log(urlImage);
 
                         recipeToPatch.urlImage = urlImage;
                         let data = await editRecipe(recipeToPatch);

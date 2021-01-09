@@ -70,7 +70,7 @@ export async function getRequestProfile(context) {
                             image.src = photoUrl;
                             buttonUpload.textContent = "Прикачи снимка";
 
-                            console.log(buttonUpload.querySelector("#image-profile"));
+                            // console.log(buttonUpload.querySelector("#image-profile"));
                             if (!buttonUpload.querySelector("#image-profile")) {
                                 buttonUpload.appendChild(imageInput);
                             }
@@ -87,7 +87,7 @@ export async function getRequestProfile(context) {
                         buttonUpload.appendChild(imageInput);
                     }
 
-                    console.log(e.message);
+                    // console.log(e.message);
                 }
 
             }
@@ -125,14 +125,15 @@ export async function getRequestProfile(context) {
                     Array.from(document.getElementsByClassName("password-profile"))
                         .forEach(e => e.style.display = "none");
 
-                    console.log(data);
                     let user = JSON.parse(localStorage.getItem("auth"));
                     localStorage.removeItem("auth");
                     user.idToken = data["idToken"];
                     user.refreshToken = data["refreshToken"];
                     localStorage.setItem("auth", JSON.stringify(user));
                 } catch (e) {
-                    console.log(e.message);
+                    
+                    notificationManager.invalidInfo("Моля, влезте със старата парола и отново сменете с новата парола");
+                    context.redirect("#/logout");
                 }
 
             }

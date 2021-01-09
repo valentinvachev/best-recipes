@@ -123,6 +123,12 @@ export async function changePasswordFunction(password) {
 
 
     let data = await response.json();
+
+    if (data.error) {
+
+        throw new Error("Should login again");
+
+    }
     return data;
 }
 
