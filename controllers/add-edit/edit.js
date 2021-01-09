@@ -1,7 +1,7 @@
 import { getUser } from "../../utils/user.js"
 import * as notificationManager from "../notifications/notifications.js"
 import { editRecipe, getSpecificRecipe } from "../../utils/data.js"
-import { waitingButton, searchFilterHeader, addTextEditor, manageImageButton,paramsOfCanvas } from "../../utils/itemUtil.js"
+import { waitingButton, searchFilterHeader, addTextEditor, manageImageButton, paramsOfCanvas } from "../../utils/itemUtil.js"
 
 export async function getRequestEdit(context) {
 
@@ -84,6 +84,8 @@ export async function postRequestEdit(context) {
                 let newFile = null;
                 let urlImage = null;
 
+                console.log(image);
+
                 const reader = new FileReader();
                 const redirect = this.redirect.bind(this);
                 reader.readAsDataURL(file);
@@ -99,11 +101,17 @@ export async function postRequestEdit(context) {
                         let storageRef = storage.ref('photos/' + fileName);
                         await storageRef.put(newFile);
                         urlImage = await storageRef.getDownloadURL();
+
+                        console.log(urlImage);
+
                         recipeToPatch.urlImage = urlImage;
                         let data = await editRecipe(recipeToPatch);
-                        redirect(`#/recipe/${id}/comments/page/:number`);
+                        redirect(`#/recipe/${id}/comments/page/:number`)
                     })
                 })
+            } else {
+                let data = await editRecipe(recipeToPatch);
+                redirect(`#/recipe/${id}/comments/page/:number`)
             }
 
         } catch (e) {
