@@ -6,6 +6,14 @@ export function invalidInfo(message) {
     setTimeout(() => errorBox.style.display = 'none', 2000);
 };
 
+export function invalidInfoLonger(message) {
+    let errorBox = document.getElementById('errorBox');
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+
+    setTimeout(() => errorBox.style.display = 'none', 5000);
+};
+
 
 export function validInfo(message) {
     let infoBox = document.getElementById('infoBox');
