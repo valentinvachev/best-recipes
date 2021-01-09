@@ -132,7 +132,7 @@ export async function getRequestProfile(context) {
                     localStorage.setItem("auth", JSON.stringify(user));
                 } catch (e) {
                     
-                    notificationManager.invalidInfo("Моля, влезте със старата парола и отново сменете с новата парола");
+                    notificationManager.invalidInfoLonger("Моля, влезте със старата парола и отново сменете с новата парола");
                     context.redirect("#/logout");
                 }
 
