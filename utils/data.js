@@ -112,7 +112,7 @@ export async function deleteUserFunction() {
 
 export async function changePasswordFunction(password) {
     let idToken = await databaseManager.getToken();
-
+    
     let response = await fetch(`${databaseManager.changePassword()}`, {
         method: "POST",
         headers: {
@@ -126,15 +126,15 @@ export async function changePasswordFunction(password) {
     return data;
 }
 
-export async function checkIdTokenValidity() {
+export async function checkIdTokenValidity(email) {
     let idToken = await databaseManager.getToken();
 
-    let response = await fetch(`${databaseManager.checkIdValidity()}`, {
+    let response = await fetch(`${databaseManager.updateProfile()}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ idToken, returnSecureToken: true })
+        body: JSON.stringify({ idToken,email, returnSecureToken: true })
     });
 
     let data = await response.json();
