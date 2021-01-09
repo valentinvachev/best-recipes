@@ -27,7 +27,7 @@ export async function getRequestAllRecipes(context) {
             pagination: await this.load("./templates/pagination/pagination.hbs")
         }
 
-        console.log(user);
+        // console.log(user);
 
         this.partial("./templates/all-recipes/all-recipes.hbs", user, manageEvents);
 

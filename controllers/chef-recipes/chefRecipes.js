@@ -12,7 +12,7 @@ export async function getRequestChef(context) {
         let recipesDB = [];
         let recipes = [];
 
-        console.log(context.params);
+        // console.log(context.params);
 
         gatherInfoRecipe(allRecipesDB, recipesDB);
         recipesDB = filterRecipesByOwnerIdUser(recipesDB, context.params.idUser);
@@ -23,7 +23,7 @@ export async function getRequestChef(context) {
         user.chef = context.params.username;
 
 
-        console.log(user);
+        // console.log(user);
 
         this.partials = {
             header: await this.load("./templates/header-footer/header.hbs"),
